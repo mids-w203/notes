@@ -1,0 +1,6 @@
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files:
+  html: ["index.Rmd", "regression.Rmd", "ols.Rmd", "references.Rmd", "appendix.Rmd"]

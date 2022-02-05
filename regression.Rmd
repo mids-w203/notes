@@ -1,0 +1,82 @@
+# Regression
+We write a $k$-vector (of scalars) as
+$$
+\pmb{x}=
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_k
+\end{bmatrix}
+$$
+The transpose of $\pmb{x}$ as
+$$
+\pmb{x}'=
+\begin{bmatrix}
+x_1 & x_2 & \ldots & x_k
+\end{bmatrix}.
+$$
+We use uppercase letters $X,Y,Z,\ldots$ to denote random variables. Random vectors are denoted by **bold** uppercase letters $\pmb{X},\pmb{Y},\pmb{Z},\ldots$, and written as a column vector. For example, $$
+\pmb{X}=
+\begin{bmatrix}
+X_{1}\\
+X_{2}\\
+\vdots \\
+X_{k} \\
+\end{bmatrix}_{k\times 1}
+$$
+In order to distinguish random matrices from vectors, a random matrix is denoted by $\mathbb{X}$.
+
+The expectation of $\pmb{X}$ is defined as
+$$
+\mathbb{E}[\pmb{X}]=
+\begin{bmatrix}
+\mathbb{E}[X_1] \\
+\mathbb{E}[X_2] \\
+\vdots \\
+\mathbb{E}[X_k] \\
+\end{bmatrix}
+$$
+The $k\times k$ covariance matrix of $\pmb{X}$ is 
+$$
+\begin{align}
+V[\pmb{X}] &=\mathbb{E}[(\pmb{X}-\mathbb{E}[\pmb{X}])(\pmb{X}-\mathbb{E}[\pmb{X}])'] \\
+&=\begin{bmatrix}
+\sigma_1^2 & \sigma_{12} & \ldots & \sigma_{1k} \\
+\sigma_{21} & \sigma_{2}^2 & \ldots & \sigma_{2k} \\
+\vdots & \vdots & \ddots & \vdots \\
+\sigma_{k1} & \sigma_{k2}^2 & \ldots & \sigma_{k}^2 \\
+\end{bmatrix}_{k\times k}
+\end{align}
+$$
+where $\sigma_j=V[X_j]$ and $\sigma_{ij}=Cov[X_i,X_j]$ for $i,j=1,2,\ldots,k$ and $i\neq j$.
+
+## Conditional Expectation Function
+:::{.theorem}
+If \ $\E{Y^2}<\infty$ and $\pmb{X}$ is a random vector such that $Y=m(\pmb{X})+e$, then the following statements are equivalent:  
+1. $m(X)=E[Y|\pmb{X}]$, the CEF of $Y$ given $\pmb{X}$   
+2. $\E{e|\pmb{X}}=0$
+:::
+
+## Best Linear Predictor
+Let $Y$ be a random variable and $\pmb{X}$ be a random vector. We denote the **best linear predictor** of $Y$ given $\pmb{X}$ by $\mathscr{P}[Y|\pmb{X}]$. It's also called the **linear projection** of $Y$ on $\pmb{X}$. 
+
+::: {.theorem name="Best Linear Predictor"}
+Under the following assumptions
+
+1. $\mathbb{E}\left[Y^2\right]<\infty$
+2. $\mathbb{E}||\pmb{X}||^2<\infty$
+3. $\mathbb{Q}_{\pmb{XX}}:=\mathbb{E}\left[\pmb{X}\pmb{X}'\right]$ is positive-definite
+
+the best linear predictor exists uniquely, and has the form
+$$
+\mathscr{P}[Y|\pmb{X}]=\pmb{X}'\beta,
+$$
+where $\beta=\left(\mathbb{E}[\pmb{X}\pmb{X}']\right)^{-1}\mathbb{E}[\pmb{X}Y]$.
+:::
+
+If the BLP exists, the linear projection error $e=Y-\mathscr{P}[Y|\pmb{X}]$ follows the following properties:
+
+1. $\mathbb{E}[\pmb{X}e]=\pmb{0}$
+2. $\mathbb{E}[e]=0$ if 
+$\pmb{X}'=\begin{bmatrix}1 & X_1 & \ldots & X_k \end{bmatrix}$.

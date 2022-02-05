@@ -1,0 +1,14 @@
+thm:unlabeled-div-1
+thm:unlabeled-div-2
+def:unlabeled-div-3
+eq:moment-0
+eq:moment
+thm:unlabeled-div-4
+regression
+conditional-expectation-function
+best-linear-predictor
+ordinary-least-squares
+matrix-formulation
+solution-of-ols
+least-squares-residuals
+proofs

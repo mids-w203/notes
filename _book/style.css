@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Source+Serif+4&display=swap');
+
+div.theorem, div.definition {
+  margin: 10px;
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+a.navigation-prev, a.navigation-next {
+  color: #F00E4D!important;
+}
+.level1 h1 {
+  border-bottom: 1px solid #F00E4D;
+}
+.toc-logo img {
+  max-width: 90%;
+}
+.header-section-number {
+  text-align: center;
+  padding-left: 5px;
+  border-bottom: 5px solid #F00E4D;
+  display: inline-block;
+}
+p, div {
+  font-family: 'Source Serif 4', sans-serif!important;
+}
+.book-summary {
+  line-height:0.5em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bree Serif', serif;
+}
+li.active > a {
+  background: white!important;
+  color: #F00E4D!important;
+  border-right: 5px solid #F00E4D;
+}
+li > a:hover {
+  color: #F00E4D!important;
+}
+
+.header-section-number {
+  color: #F00E4D;
+}
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}

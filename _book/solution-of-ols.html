@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2 Solution of OLS | w203: Statistics for Data Science</title>
+  <meta name="description" content="w203 course slides" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2 Solution of OLS | w203: Statistics for Data Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="w203 course slides" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2 Solution of OLS | w203: Statistics for Data Science" />
+  
+  <meta name="twitter:description" content="w203 course slides" />
+  
+
+<meta name="author" content="w203 Instructors" />
+
+
+<meta name="date" content="2022-02-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="matrix-formulation.html"/>
+<link rel="next" href="least-squares-residuals.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">w203: Statistics for Data Science</a></li>
+<li class="toc-logo"><a href="./"><img src="images/cover.svg"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Cover</a></li>
+<li class="chapter" data-level="1" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>1</b> Regression</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="conditional-expectation-function.html"><a href="conditional-expectation-function.html"><i class="fa fa-check"></i><b>1.1</b> Conditional Expectation Function</a></li>
+<li class="chapter" data-level="1.2" data-path="best-linear-predictor.html"><a href="best-linear-predictor.html"><i class="fa fa-check"></i><b>1.2</b> Best Linear Predictor</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>2</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="matrix-formulation.html"><a href="matrix-formulation.html"><i class="fa fa-check"></i><b>2.1</b> Matrix Formulation</a></li>
+<li class="chapter" data-level="2.2" data-path="solution-of-ols.html"><a href="solution-of-ols.html"><i class="fa fa-check"></i><b>2.2</b> Solution of OLS</a></li>
+<li class="chapter" data-level="2.3" data-path="least-squares-residuals.html"><a href="least-squares-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Least Squares Residuals</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="proofs.html"><a href="proofs.html"><i class="fa fa-check"></i><b>A</b> Proofs</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">w203: Statistics for Data Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="solution-of-ols" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Solution of OLS</h2>
+<p>We rewrite the cost function as
+<span class="math display">\[
+\widehat{S}(\pmb{\beta})=\frac{1}{n}SSE(\pmb{\beta}),
+\]</span>
+where
+<span class="math inline">\(SSE(\pmb{\beta}):=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}&#39;\pmb{\beta})^2\)</span>.</p>
+<p>We now express <span class="math inline">\(SSE(\pmb{\beta})\)</span> as a quadratic function of <span class="math inline">\(\pmb{\beta}&#39;\)</span>.
+<span class="math display">\[
+\begin{align}
+SSE &amp;=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}&#39;\pmb{\beta})^2 \\
+&amp;=\sum\limits_{i=1}^n Y_i^2
+  - 2\sum\limits_{i=1}^n Y_i(\pmb{X_i}&#39;\pmb{\beta})
+  + \sum\limits_{i=1}^n (\pmb{X_i}&#39;\pmb{\beta})^2 \\
+&amp;=\sum\limits_{i=1}^n Y_i^2
+  - 2\sum\limits_{i=1}^n Y_i(\pmb{\beta}&#39;\pmb{X_i})
+  + \sum\limits_{i=1}^n (\pmb{X_i}&#39;\pmb{\beta})(\pmb{X_i}&#39;\pmb{\beta}) \\
+&amp;=\sum\limits_{i=1}^n Y_i^2
+  - 2\sum\limits_{i=1}^n \pmb{\beta}&#39;(Y_i\pmb{X_i})
+  + \sum\limits_{i=1}^n (\pmb{\beta}&#39;\pmb{X_i})(\pmb{X_i}&#39;\pmb{\beta}) \\
+&amp;=\left(\sum\limits_{i=1}^n Y_i^2\right)
+  - 2\pmb{\beta}&#39;\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
+  + \pmb{\beta}&#39;\left(\sum\limits_{i=1}^n \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}
+\end{align}
+\]</span>
+Taking partial derivative w.r.t. <span class="math inline">\(\beta_j\)</span>, we get
+<span class="math display">\[
+\frac{\partial}{\partial\beta_j}SSE(\pmb{\beta})=-2\left[\sum\limits_{i=1}^n\pmb{X_i}Y_i\right]_j
++ 2\left[\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}\right]_j.
+\]</span></p>
+<p>Therefore,
+<span class="math display">\[
+\frac{\partial}{\partial\pmb{\beta}}SSE(\pmb{\beta})
+=-2\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
++ 2\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}.
+\]</span></p>
+<p>In order to miniminize <span class="math inline">\(SSE(\pmb{\beta})\)</span>, a necessary condition for <span class="math inline">\(\widehat{\pmb{\beta}}\)</span> is
+<span class="math display">\[
+\frac{\partial}{\partial\pmb{\beta}}SSE(\pmb{\beta})\bigg|_{\pmb{\beta}
+=\widehat{\pmb{\beta}}}=\pmb{0},
+\]</span>
+i.e.,
+<span class="math display">\[
+-2\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
++ 2\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\widehat{\pmb{\beta}}
+=\pmb{0}
+\]</span>
+So,
+<span class="math display" id="eq:moment-0">\[\begin{equation}
+\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
+=\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\widehat{\pmb{\beta}}
+\tag{2.1}
+\end{equation}\]</span></p>
+<p>Both the left and right hand side of the above equation are <span class="math inline">\(k+1\)</span> vectors. So, we have a system of <span class="math inline">\((k+1)\)</span> linear equations with <span class="math inline">\((k+1)\)</span> unknowns—the elements of <span class="math inline">\(\pmb{\beta}\)</span>.</p>
+<p>Let us define</p>
+<p><span class="math display">\[
+\widehat{\mathbb{Q}}_{\pmb{XX}}
+=\frac{1}{n}\left(\sum\limits_{i=1}^n\pmb{X_i}\pmb{X_i}&#39;\right)
+\mbox{ and }
+\widehat{\mathbb{Q}}_{\pmb{X}Y}
+=\frac{1}{n}\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right).
+\]</span></p>
+<p>Rewriting <a href="solution-of-ols.html#eq:moment-0">(2.1)</a>, we get
+<span class="math display" id="eq:moment">\[
+\begin{equation}
+\widehat{\mathbb{Q}}_{\pmb{X}Y}=\widehat{\mathbb{Q}}_{\pmb{XX}}
+\widehat{\pmb{\beta}}.
+\tag{2.2}
+\end{equation}
+\]</span>
+Equation <a href="solution-of-ols.html#eq:moment">(2.2)</a> is sometimes referred to as the first-order moment condition. For the uniqueness of solution, we require that
+<span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular. In that case, we can solve for <span class="math inline">\(\widehat{\pmb{\beta}}\)</span> to get,
+<span class="math display">\[
+\widehat{\pmb{\beta}}=\left[\widehat{\mathbb{Q}}_{\pmb{XX}}\right]^{-1}
+\widehat{\mathbb{Q}}_{\pmb{X}Y}.
+\]</span>
+To verify that the above choice minimizes <span class="math inline">\(SSE(\pmb{\beta})\)</span>,
+one can consider the second-order moment conditions.
+<span class="math display">\[
+\frac{\partial^2}{\partial\pmb{\beta}\partial\pmb{\beta}&#39;}SSE(\pmb{\beta})
+=2\widehat{\mathbb{Q}}_{\pmb{XX}}.
+\]</span>
+If <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, it is also positive-definite. So, we have actually proved the following theorem.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-4" class="theorem"><strong>Theorem 2.1  </strong></span>If  <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, then the
+least squares estimator is unique, and is given by
+<span class="math display">\[
+\widehat{\pmb{\beta}}=\left[\widehat{\mathbb{Q}}_{\pmb{XX}}\right]^{-1}
+\widehat{\mathbb{Q}}_{\pmb{X}Y}.
+\]</span></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="matrix-formulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="least-squares-residuals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/ols.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
