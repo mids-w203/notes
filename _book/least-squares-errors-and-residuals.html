@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.2 Best Linear Predictor | w203: Statistics for Data Science</title>
+  <title>2.3 Least Squares Errors and Residuals | w203: Statistics for Data Science</title>
   <meta name="description" content="w203 course slides" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.2 Best Linear Predictor | w203: Statistics for Data Science" />
+  <meta property="og:title" content="2.3 Least Squares Errors and Residuals | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.2 Best Linear Predictor | w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="2.3 Least Squares Errors and Residuals | w203: Statistics for Data Science" />
   
   <meta name="twitter:description" content="w203 course slides" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="conditional-expectation-function.html"/>
-<link rel="next" href="ordinary-least-squares.html"/>
+<link rel="prev" href="solution-of-ols.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -84,10 +84,8 @@
 <ul>
 <li class="chapter" data-level="2.1" data-path="matrix-formulation.html"><a href="matrix-formulation.html"><i class="fa fa-check"></i><b>2.1</b> Matrix Formulation</a></li>
 <li class="chapter" data-level="2.2" data-path="solution-of-ols.html"><a href="solution-of-ols.html"><i class="fa fa-check"></i><b>2.2</b> Solution of OLS</a></li>
-<li class="chapter" data-level="2.3" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Errors and Residuals</a></li>
-<li class="chapter" data-level="2.4" data-path="model-in-matrix-notation.html"><a href="model-in-matrix-notation.html"><i class="fa fa-check"></i><b>2.4</b> Model in Matrix Notation</a></li>
+<li class="chapter" data-level="2.3" data-path="least-squares-errors-and-residuals.html"><a href="least-squares-errors-and-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Least Squares Errors and Residuals</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="least-squares-regression.html"><a href="least-squares-regression.html"><i class="fa fa-check"></i><b>3</b> Least Squares Regression</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="proofs.html"><a href="proofs.html"><i class="fa fa-check"></i><b>A</b> Proofs</a></li>
@@ -108,28 +106,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="best-linear-predictor" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Best Linear Predictor</h2>
-<p>Let <span class="math inline">\(Y\)</span> be a random variable and <span class="math inline">\(\pmb{X}\)</span> be a random vector. We denote the <strong>best linear predictor</strong> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(\pmb{X}\)</span> by <span class="math inline">\(\mathscr{P}[Y|\pmb{X}]\)</span>. It’s also called the <strong>linear projection</strong> of <span class="math inline">\(Y\)</span> on <span class="math inline">\(\pmb{X}\)</span>.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-2" class="theorem"><strong>Theorem 1.2  (Best Linear Predictor) </strong></span>Under the following assumptions</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mathbb{E}\left[Y^2\right]&lt;\infty\)</span></li>
-<li><span class="math inline">\(\mathbb{E}||\pmb{X}||^2&lt;\infty\)</span></li>
-<li><span class="math inline">\(\mathbb{Q}_{\pmb{XX}}:=\mathbb{E}\left[\pmb{X}\pmb{X}&#39;\right]\)</span> is positive-definite</li>
-</ol>
-<p>the best linear predictor exists uniquely, and has the form
-<span class="math display">\[
-\mathscr{P}[Y|\pmb{X}]=\pmb{X}&#39;\beta,
-\]</span>
-where <span class="math inline">\(\beta=\left(\mathbb{E}[\pmb{X}\pmb{X}&#39;]\right)^{-1}\mathbb{E}[\pmb{X}Y]\)</span>.</p>
-</div>
-<p>If the BLP exists, the linear projection error <span class="math inline">\(e=Y-\mathscr{P}[Y|\pmb{X}]\)</span> follows the following properties:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mathbb{E}[\pmb{X}e]=\pmb{0}\)</span></li>
-<li><span class="math inline">\(\mathbb{E}[e]=0\)</span> if
-<span class="math inline">\(\pmb{X}&#39;=\begin{bmatrix}1 &amp; X_1 &amp; \ldots &amp; X_k \end{bmatrix}\)</span>.</li>
-</ol>
+<div id="least-squares-errors-and-residuals" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Least Squares Errors and Residuals</h2>
 
 </div>
 <!-- </div> -->
@@ -138,8 +116,8 @@ where <span class="math inline">\(\beta=\left(\mathbb{E}[\pmb{X}\pmb{X}&#39;]\ri
           </div>
         </div>
       </div>
-<a href="conditional-expectation-function.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ordinary-least-squares.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="solution-of-ols.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -170,7 +148,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/regression.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/ols.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -137,4 +137,112 @@ $$
 :::
 
 
-## Least Squares Residuals
+## Errors and Residuals
+We first define the **fitted** value as
+$$
+\widehat{Y}_i=\pmb{X}_i'\widehat{\pmb{\beta}}\mbox{ for }
+i=1,2,\ldots,n.
+$$
+For the least squares estimators, we define the **errors** and **residuals** in the following way:
+$$
+e_i=Y_i-\pmb{X}'\pmb{\beta}, \mbox{ and } 
+\widehat{e}_i=Y_i-\widehat{Y}_i.
+$$
+
+:::{.theorem}
+If \ $\widehat{\mathbb{Q}}_{\pmb{XX}}$ is non-singular, then  
+1. $\sum\limits_{i=1}^n\pmb{X}_i\widehat{e}_i=\pmb{0}$  
+2. $\sum\limits_{i=1}^n\widehat{e}_i=0$
+:::
+
+:::{.proof}
+\begin{align}
+\sum\limits_{i=1}^n\pmb{X}_i\widehat{e}_i 
+&=\sum\limits_{i=1}^n\pmb{X}_i(Y_i-\widehat{Y}_i) \\
+&=\sum\limits_{i=1}^n\pmb{X}_iY_i-\sum\limits_{i=1}^n\pmb{X}_i\widehat{Y}_i \\
+&=\sum\limits_{i=1}^n\pmb{X}_iY_i-\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i'\pmb{\widehat{\beta}} \\
+&=\widehat{Q}_{\pmb{X}Y}-\widehat{Q}_{\pmb{XX}}\pmb{\widehat{\beta}} \\
+&=\widehat{Q}_{\pmb{X}Y}-\widehat{Q}_{\pmb{XX}}
+\left( \widehat{Q}_{\pmb{XX}}^{-1} \widehat{Q}_{\pmb{X}Y} \right) \\
+&=\pmb{0}
+\end{align}
+
+From the first row of (1) we get
+
+$$
+\sum\limits_{i=1}^n X_{i1}\widehat{e}_i=0.
+$$
+Since $X_{i1}=1$ for all $i$, we have that
+$$
+\sum\limits_{i=1}^n\widehat{e}_i=0.
+$$
+Hence the result.
+:::
+
+
+## Model in Matrix Notation
+Taking the definition of errors from the last section, we can write down a system of $n$ linear equations:
+\begin{align}
+Y_1 &= \pmb{X_1}'\pmb{\beta} + e_1 \\
+Y_2 &= \pmb{X_2}'\pmb{\beta} + e_2 \\
+& \vdots \\
+Y_n &= \pmb{X_1}'\pmb{\beta} + e_n
+\end{align}
+
+Define 
+$$
+\pmb{Y}=\begin{bmatrix}
+Y_1 \\
+Y_2 \\
+\vdots \\
+Y_n
+\end{bmatrix}_{n\times1},\ 
+\mathbb{X}=\begin{bmatrix}
+\pmb{X}_1 \\
+\pmb{X}_2 \\
+\vdots \\
+\pmb{X}_n
+\end{bmatrix}_{n\times(k+1)}, \mbox{ and }
+\pmb{e}=\begin{bmatrix}
+e_1 \\
+e_2 \\
+\vdots \\
+e_n
+\end{bmatrix}_{n\times1}.
+$$
+We can now rewrite the system as the following:
+$$
+\pmb{Y}=\mathbb{X}\pmb{\beta}+\pmb{e}.
+$$
+Note that
+$$
+\mathbb{X}=\begin{bmatrix}
+1 & X_{11} & X_{12} & \ldots & X_{1k} \\
+1 & X_{21} & X_{22} & \ldots & X_{2k} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & X_{n1} & X_{n2} & \ldots & X_{nk}
+\end{bmatrix}
+$$
+
+We also note that
+$$
+\widehat{Q}_{\pmb{XX}}=\sum\limits_{i=1}^n\pmb{X}_i'\pmb{X}_i=
+\mathbb{X}'\mathbb{X},
+$$
+and
+$$
+\widehat{Q}_{\pmb{X}Y}=\sum\limits_{i=1}^n\pmb{X}_iY_i=
+\mathbb{X}'\pmb{Y}.
+$$
+So, we have write the least squares estimator as
+$$
+\widehat{\pmb{\beta}}=\left[\mathbb{X}'\mathbb{X}\right]^{-1}\mathbb{X}\pmb{Y}.
+$$
+Similarly, the residual vector is
+$$
+\widehat{\pmb{e}}=\pmb{Y}-\mathbb{X}\widehat{\pmb{\beta}}.
+$$
+As a consequence, we can write
+$$
+\mathbb{X}'\widehat{\pmb{e}}=\pmb{0}.
+$$

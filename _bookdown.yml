@@ -3,4 +3,4 @@ language:
   ui:
     chapter_name: "Chapter "
 rmd_files:
-  html: ["index.Rmd", "regression.Rmd", "ols.Rmd", "references.Rmd", "appendix.Rmd"]
+  html: ["index.Rmd", "regression.Rmd", "ols.Rmd", "ols-regression.Rmd", "references.Rmd", "appendix.Rmd"]

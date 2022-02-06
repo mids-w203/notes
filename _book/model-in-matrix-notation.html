@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 Solution of OLS | w203: Statistics for Data Science</title>
+  <title>2.4 Model in Matrix Notation | w203: Statistics for Data Science</title>
   <meta name="description" content="w203 course slides" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 Solution of OLS | w203: Statistics for Data Science" />
+  <meta property="og:title" content="2.4 Model in Matrix Notation | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 Solution of OLS | w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="2.4 Model in Matrix Notation | w203: Statistics for Data Science" />
   
   <meta name="twitter:description" content="w203 course slides" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="matrix-formulation.html"/>
-<link rel="next" href="errors-and-residuals.html"/>
+<link rel="prev" href="errors-and-residuals.html"/>
+<link rel="next" href="least-squares-regression.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -108,106 +108,81 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solution-of-ols" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Solution of OLS</h2>
-<p>We rewrite the cost function as
+<div id="model-in-matrix-notation" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Model in Matrix Notation</h2>
+<p>Taking the definition of errors from the last section, we can write down a system of <span class="math inline">\(n\)</span> linear equations:
+<span class="math display">\[\begin{align}
+Y_1 &amp;= \pmb{X_1}&#39;\pmb{\beta} + e_1 \\
+Y_2 &amp;= \pmb{X_2}&#39;\pmb{\beta} + e_2 \\
+&amp; \vdots \\
+Y_n &amp;= \pmb{X_1}&#39;\pmb{\beta} + e_n
+\end{align}\]</span></p>
+<p>Define
 <span class="math display">\[
-\widehat{S}(\pmb{\beta})=\frac{1}{n}SSE(\pmb{\beta}),
+\pmb{Y}=\begin{bmatrix}
+Y_1 \\
+Y_2 \\
+\vdots \\
+Y_n
+\end{bmatrix}_{n\times1},\
+\mathbb{X}=\begin{bmatrix}
+\pmb{X}_1 \\
+\pmb{X}_2 \\
+\vdots \\
+\pmb{X}_n
+\end{bmatrix}_{n\times(k+1)}, \mbox{ and }
+\pmb{e}=\begin{bmatrix}
+e_1 \\
+e_2 \\
+\vdots \\
+e_n
+\end{bmatrix}_{n\times1}.
 \]</span>
-where
-<span class="math inline">\(SSE(\pmb{\beta}):=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}&#39;\pmb{\beta})^2\)</span>.</p>
-<p>We now express <span class="math inline">\(SSE(\pmb{\beta})\)</span> as a quadratic function of <span class="math inline">\(\pmb{\beta}&#39;\)</span>.
+We can now rewrite the system as the following:
 <span class="math display">\[
-\begin{align}
-SSE &amp;=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}&#39;\pmb{\beta})^2 \\
-&amp;=\sum\limits_{i=1}^n Y_i^2
-  - 2\sum\limits_{i=1}^n Y_i(\pmb{X_i}&#39;\pmb{\beta})
-  + \sum\limits_{i=1}^n (\pmb{X_i}&#39;\pmb{\beta})^2 \\
-&amp;=\sum\limits_{i=1}^n Y_i^2
-  - 2\sum\limits_{i=1}^n Y_i(\pmb{\beta}&#39;\pmb{X_i})
-  + \sum\limits_{i=1}^n (\pmb{X_i}&#39;\pmb{\beta})(\pmb{X_i}&#39;\pmb{\beta}) \\
-&amp;=\sum\limits_{i=1}^n Y_i^2
-  - 2\sum\limits_{i=1}^n \pmb{\beta}&#39;(Y_i\pmb{X_i})
-  + \sum\limits_{i=1}^n (\pmb{\beta}&#39;\pmb{X_i})(\pmb{X_i}&#39;\pmb{\beta}) \\
-&amp;=\left(\sum\limits_{i=1}^n Y_i^2\right)
-  - 2\pmb{\beta}&#39;\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
-  + \pmb{\beta}&#39;\left(\sum\limits_{i=1}^n \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}
-\end{align}
+\pmb{Y}=\mathbb{X}\pmb{\beta}+\pmb{e}.
 \]</span>
-Taking partial derivative w.r.t. <span class="math inline">\(\beta_j\)</span>, we get
+Note that
 <span class="math display">\[
-\frac{\partial}{\partial\beta_j}SSE(\pmb{\beta})=-2\left[\sum\limits_{i=1}^n\pmb{X_i}Y_i\right]_j
-+ 2\left[\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}\right]_j.
+\mathbb{X}=\begin{bmatrix}
+1 &amp; X_{11} &amp; X_{12} &amp; \ldots &amp; X_{1k} \\
+1 &amp; X_{21} &amp; X_{22} &amp; \ldots &amp; X_{2k} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; X_{n1} &amp; X_{n2} &amp; \ldots &amp; X_{nk}
+\end{bmatrix}
 \]</span></p>
-<p>Therefore,
+<p>We also note that
 <span class="math display">\[
-\frac{\partial}{\partial\pmb{\beta}}SSE(\pmb{\beta})
-=-2\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
-+ 2\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}.
+\widehat{Q}_{\pmb{XX}}=\sum\limits_{i=1}^n\pmb{X}_i&#39;\pmb{X}_i=
+\mathbb{X}&#39;\mathbb{X},
+\]</span>
+and
+<span class="math display">\[
+\widehat{Q}_{\pmb{X}Y}=\sum\limits_{i=1}^n\pmb{X}_iY_i=
+\mathbb{X}&#39;\pmb{Y}.
+\]</span>
+So, we have write the least squares estimator as
+<span class="math display">\[
+\widehat{\pmb{\beta}}=\left[\mathbb{X}&#39;\mathbb{X}\right]^{-1}\mathbb{X}\pmb{Y}.
+\]</span>
+Similarly, the residual vector is
+<span class="math display">\[
+\widehat{\pmb{e}}=\pmb{Y}-\mathbb{X}\widehat{\pmb{\beta}}.
+\]</span>
+As a consequence, we can write
+<span class="math display">\[
+\mathbb{X}&#39;\widehat{\pmb{e}}=\pmb{0}.
 \]</span></p>
-<p>In order to miniminize <span class="math inline">\(SSE(\pmb{\beta})\)</span>, a necessary condition for <span class="math inline">\(\widehat{\pmb{\beta}}\)</span> is
-<span class="math display">\[
-\frac{\partial}{\partial\pmb{\beta}}SSE(\pmb{\beta})\bigg|_{\pmb{\beta}
-=\widehat{\pmb{\beta}}}=\pmb{0},
-\]</span>
-i.e.,
-<span class="math display">\[
--2\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
-+ 2\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\widehat{\pmb{\beta}}
-=\pmb{0}
-\]</span>
-So,
-<span class="math display" id="eq:moment-0">\[\begin{equation}
-\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
-=\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\widehat{\pmb{\beta}}
-\tag{2.1}
-\end{equation}\]</span></p>
-<p>Both the left and right hand side of the above equation are <span class="math inline">\(k+1\)</span> vectors. So, we have a system of <span class="math inline">\((k+1)\)</span> linear equations with <span class="math inline">\((k+1)\)</span> unknowns—the elements of <span class="math inline">\(\pmb{\beta}\)</span>.</p>
-<p>Let us define</p>
-<p><span class="math display">\[
-\widehat{\mathbb{Q}}_{\pmb{XX}}
-=\frac{1}{n}\left(\sum\limits_{i=1}^n\pmb{X_i}\pmb{X_i}&#39;\right)
-\mbox{ and }
-\widehat{\mathbb{Q}}_{\pmb{X}Y}
-=\frac{1}{n}\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right).
-\]</span></p>
-<p>Rewriting <a href="solution-of-ols.html#eq:moment-0">(2.1)</a>, we get
-<span class="math display" id="eq:moment">\[
-\begin{equation}
-\widehat{\mathbb{Q}}_{\pmb{X}Y}=\widehat{\mathbb{Q}}_{\pmb{XX}}
-\widehat{\pmb{\beta}}.
-\tag{2.2}
-\end{equation}
-\]</span>
-Equation <a href="solution-of-ols.html#eq:moment">(2.2)</a> is sometimes referred to as the first-order moment condition. For the uniqueness of solution, we require that
-<span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular. In that case, we can solve for <span class="math inline">\(\widehat{\pmb{\beta}}\)</span> to get,
-<span class="math display">\[
-\widehat{\pmb{\beta}}=\left[\widehat{\mathbb{Q}}_{\pmb{XX}}\right]^{-1}
-\widehat{\mathbb{Q}}_{\pmb{X}Y}.
-\]</span>
-To verify that the above choice minimizes <span class="math inline">\(SSE(\pmb{\beta})\)</span>,
-one can consider the second-order moment conditions.
-<span class="math display">\[
-\frac{\partial^2}{\partial\pmb{\beta}\partial\pmb{\beta}&#39;}SSE(\pmb{\beta})
-=2\widehat{\mathbb{Q}}_{\pmb{XX}}.
-\]</span>
-If <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, it is also positive-definite. So, we have actually proved the following theorem.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-2" class="theorem"><strong>Theorem 2.1  </strong></span>If  <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, then the
-least squares estimator is unique, and is given by
-<span class="math display">\[
-\widehat{\pmb{\beta}}=\left[\widehat{\mathbb{Q}}_{\pmb{XX}}\right]^{-1}
-\widehat{\mathbb{Q}}_{\pmb{X}Y}.
-\]</span></p>
+
 </div>
-</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="matrix-formulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="errors-and-residuals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="errors-and-residuals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="least-squares-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
