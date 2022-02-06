@@ -1,0 +1,19 @@
+# Linear Conditional Expectation Function
+
+## Variance of Error
+We first compute the (unconditional) variance of the error vector $\pmb{e}$. The covariance matrix 
+$$
+\mathbb{V}[\pmb{e}]=\E{\pmb{e}\pmb{e}'}-\E{\pmb{e}}\E{\pmb{e}'}=\E{\pmb{e}\pmb{e}'}\stackrel{\text{def}}{=}\mathbb{D}.
+$$
+For $i\neq j$, the errors $e_i$,$e_j$ are independent. As a result, $\E{e_ie_j}=\E{e_i}\E{e_j}=0$. So, $\mathbb{D}$ is a diagonal matrix with the $i$-th diagonal element $\sigma_i^2$:
+$$
+\mathbb{D}=\begin{bmatrix}
+\sigma_1^2 & 0 & \ldots & 0 \\
+0 & \sigma_2^2 & \ldots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \ldots & \sigma_n^2
+\end{bmatrix}.
+$$
+
+## Variance of OLS Estimators
+We define $\mathbb{V}_\widehat{\pmb{\beta}}:=V\left[\widehat{\pmb{\beta}}\right]$ as the covariance matrix of the OLS coefficients.

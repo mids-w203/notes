@@ -3,4 +3,12 @@ language:
   ui:
     chapter_name: "Chapter "
 rmd_files:
-  html: ["index.Rmd", "regression.Rmd", "ols.Rmd", "ols-regression.Rmd", "references.Rmd", "appendix.Rmd"]
+  html: [
+    "index.Rmd",
+    "regression.Rmd",
+    "ols.Rmd",
+    "linear-CEF.Rmd",
+    "large-sample.Rmd",
+    "references.Rmd",
+    "appendix.Rmd"
+    ]

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>w203: Statistics for Data Science</title>
+  <title>Chapter 4 Large-Sample Regression | w203: Statistics for Data Science</title>
   <meta name="description" content="w203 course slides" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="w203: Statistics for Data Science" />
+  <meta property="og:title" content="Chapter 4 Large-Sample Regression | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="Chapter 4 Large-Sample Regression | w203: Statistics for Data Science" />
   
   <meta name="twitter:description" content="w203 course slides" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="regression.html"/>
+<link rel="prev" href="variance-of-ols-estimators.html"/>
+<link rel="next" href="consistency-of-ols-estimators.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -122,23 +122,32 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">w203: Statistics for Data Science</h1>
-<p class="author"><em>w203 Instructors</em></p>
-<p class="date"><em>2022-02-06</em></p>
-</div>
-<div id="cover" class="section level1 unnumbered">
-<h1>Cover</h1>
-<p><img src="images/cover.svg" /></p>
-
+<div id="large-sample-regression" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Large-Sample Regression</h1>
+<p>We assume that the best linear predictor, <span class="math inline">\(\mathscr{P}[Y|\pmb{X}]\)</span>, of <span class="math inline">\(Y\)</span> given <span class="math inline">\(\pmb{X}\)</span> is <span class="math inline">\(\pmb{X}&#39;\pmb{\beta}\)</span>. If we write
+<span class="math display">\[
+Y=\pmb{X}&#39;\pmb{\beta}+e.
+\]</span>
+we have from Theorem <a href="#thm:blperror"><strong>??</strong></a>
+<span class="math display">\[{\mathbb{E}\left[ e \right]}=0,\mbox{ and }{\mathbb{E}\left[ \pmb{X}e \right]}=\pmb{0}.\]</span></p>
+<p>We also assume that the dataset <span class="math inline">\(\{(Y_i,\pmb{X}_i)\}\)</span> are taken <strong>i.i.d.</strong> from the joint distribution of <span class="math inline">\((Y,\pmb{X})\)</span>. For each <span class="math inline">\(i\)</span>, we can write
+<span class="math display">\[
+Y_i=\pmb{X_i}&#39;\pmb{\beta}+e_i.
+\]</span>
+In matrix notation, we can write
+<span class="math display">\[
+\pmb{Y}=\mathbb{X}&#39;\pmb{\beta}+\pmb{e}.
+\]</span>
+Then
+<span class="math display">\[{\mathbb{E}\left[ \pmb{e} \right]}=\pmb{0}\]</span>.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="regression.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="variance-of-ols-estimators.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="consistency-of-ols-estimators.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -169,7 +178,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/large-sample.Rmd",
 "text": "Edit"
 },
 "history": {

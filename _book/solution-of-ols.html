@@ -24,7 +24,7 @@
 <meta name="author" content="w203 Instructors" />
 
 
-<meta name="date" content="2022-02-05" />
+<meta name="date" content="2022-02-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -87,7 +87,21 @@
 <li class="chapter" data-level="2.3" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Errors and Residuals</a></li>
 <li class="chapter" data-level="2.4" data-path="model-in-matrix-notation.html"><a href="model-in-matrix-notation.html"><i class="fa fa-check"></i><b>2.4</b> Model in Matrix Notation</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="least-squares-regression.html"><a href="least-squares-regression.html"><i class="fa fa-check"></i><b>3</b> Least Squares Regression</a></li>
+<li class="chapter" data-level="3" data-path="linear-conditional-expectation-function.html"><a href="linear-conditional-expectation-function.html"><i class="fa fa-check"></i><b>3</b> Linear Conditional Expectation Function</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>3.1</b> Variance of Error</a></li>
+<li class="chapter" data-level="3.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>3.2</b> Variance of OLS Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="large-sample-regression.html"><a href="large-sample-regression.html"><i class="fa fa-check"></i><b>4</b> Large-Sample Regression</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="consistency-of-ols-estimators.html"><a href="consistency-of-ols-estimators.html"><i class="fa fa-check"></i><b>4.1</b> Consistency of OLS Estimators</a></li>
+<li class="chapter" data-level="4.2" data-path="asymptotic-normality.html"><a href="asymptotic-normality.html"><i class="fa fa-check"></i><b>4.2</b> Asymptotic Normality</a></li>
+<li class="chapter" data-level="4.3" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html"><i class="fa fa-check"></i><b>4.3</b> Covariance Matrix Estimation</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#heteroskedastic-variance"><i class="fa fa-check"></i><b>4.3.1</b> Heteroskedastic Variance</a></li>
+<li class="chapter" data-level="4.3.2" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#homeskedastic-variance"><i class="fa fa-check"></i><b>4.3.2</b> Homeskedastic Variance</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="proofs.html"><a href="proofs.html"><i class="fa fa-check"></i><b>A</b> Proofs</a></li>
@@ -193,7 +207,7 @@ one can consider the second-order moment conditions.
 \]</span>
 If <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, it is also positive-definite. So, we have actually proved the following theorem.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-2" class="theorem"><strong>Theorem 2.1  </strong></span>If  <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, then the
+<p><span id="thm:unlabeled-div-4" class="theorem"><strong>Theorem 2.1  </strong></span>If  <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, then the
 least squares estimator is unique, and is given by
 <span class="math display">\[
 \widehat{\pmb{\beta}}=\left[\widehat{\mathbb{Q}}_{\pmb{XX}}\right]^{-1}

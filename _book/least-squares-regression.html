@@ -24,7 +24,7 @@
 <meta name="author" content="w203 Instructors" />
 
 
-<meta name="date" content="2022-02-05" />
+<meta name="date" content="2022-02-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="model-in-matrix-notation.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="variance-of-error.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -87,7 +87,11 @@
 <li class="chapter" data-level="2.3" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Errors and Residuals</a></li>
 <li class="chapter" data-level="2.4" data-path="model-in-matrix-notation.html"><a href="model-in-matrix-notation.html"><i class="fa fa-check"></i><b>2.4</b> Model in Matrix Notation</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="least-squares-regression.html"><a href="least-squares-regression.html"><i class="fa fa-check"></i><b>3</b> Least Squares Regression</a></li>
+<li class="chapter" data-level="3" data-path="least-squares-regression.html"><a href="least-squares-regression.html"><i class="fa fa-check"></i><b>3</b> Least Squares Regression</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>3.1</b> Variance of Error</a></li>
+<li class="chapter" data-level="3.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>3.2</b> Variance of OLS Estimators</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="proofs.html"><a href="proofs.html"><i class="fa fa-check"></i><b>A</b> Proofs</a></li>
@@ -110,7 +114,20 @@
             <section class="normal" id="section-">
 <div id="least-squares-regression" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Least Squares Regression</h1>
-
+<p>We assume that the best linear predictor of <span class="math inline">\(Y\)</span> given <span class="math inline">\(\pmb{X}\)</span> is <span class="math inline">\(\pmb{X}&#39;\pmb{\beta}\)</span>. If we write
+<span class="math display">\[
+Y=\pmb{X}&#39;\pmb{\beta}+e,
+\]</span>
+then we have <span class="math inline">\({\mathbb{E}\left[ e \right]}=0\)</span>.</p>
+<p>We also assume that the dataset <span class="math inline">\(\{(Y_i,\pmb{X}_i)\}\)</span> are taken <strong>i.i.d.</strong> from the joint distribution of <span class="math inline">\((Y,\pmb{X})\)</span>. For each <span class="math inline">\(i\)</span>, we can write
+<span class="math display">\[
+Y_i=\pmb{X_i}&#39;\pmb{\beta}+e_i.
+\]</span>
+In matrix notation, we can write
+<span class="math display">\[
+\pmb{Y}=\mathbb{X}&#39;\pmb{\beta}+\pmb{e}.
+\]</span>
+Note that <span class="math inline">\({\mathbb{E}\left[ \pmb{e} \right]}=\pmb{0}\)</span>.</p>
 </div>
             </section>
 
@@ -118,7 +135,7 @@
         </div>
       </div>
 <a href="model-in-matrix-notation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="variance-of-error.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -149,7 +166,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/ols-regression.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/large-sample.Rmd",
 "text": "Edit"
 },
 "history": {

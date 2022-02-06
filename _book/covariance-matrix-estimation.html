@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>w203: Statistics for Data Science</title>
+  <title>4.3 Covariance Matrix Estimation | w203: Statistics for Data Science</title>
   <meta name="description" content="w203 course slides" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="w203: Statistics for Data Science" />
+  <meta property="og:title" content="4.3 Covariance Matrix Estimation | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="4.3 Covariance Matrix Estimation | w203: Statistics for Data Science" />
   
   <meta name="twitter:description" content="w203 course slides" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="regression.html"/>
+<link rel="prev" href="asymptotic-normality.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -122,23 +122,40 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">w203: Statistics for Data Science</h1>
-<p class="author"><em>w203 Instructors</em></p>
-<p class="date"><em>2022-02-06</em></p>
+<div id="covariance-matrix-estimation" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Covariance Matrix Estimation</h2>
+<p>We now turn our attention to the estimation of the sandwich matrix using a finite sample.</p>
+<div id="heteroskedastic-variance" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Heteroskedastic Variance</h3>
+<p>Theorem <a href="asymptotic-normality.html#thm:asympvar">4.1</a> presented the asymptotic covariance matrix of
+<span class="math inline">\(\sqrt{n}(\widehat{\pmb{\beta}}-\pmb{\beta})\)</span> is
+<span class="math display">\[\mathbb{V}_{\pmb{\beta}}
+=\mathbb{Q}_{\pmb{XX}}^{-1}\mathbb{A}\mathbb{Q}_{\pmb{XX}}^{-1}.\]</span>
+Without imposing any homoskedasticity condition, we estimate <span class="math inline">\(\mathbb{V}_{\pmb{\beta}}\)</span> using a plug-in estimator.</p>
+<p>We have already seen that <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}=\frac{1}{n}\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i&#39;\)</span> is a natural estimator for <span class="math inline">\(\mathbb{Q}_{\pmb{XX}}\)</span>. For <span class="math inline">\(\mathbb{A}\)</span>, we use the moment estimator
+<span class="math display">\[
+\widehat{\mathbb{A}}=\frac{1}{n}\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i&#39;\widehat{e}_i^2,
+\]</span>
+where <span class="math inline">\(\widehat{e}_i=(Y_i-\pmb{X}_i&#39;\widehat{\pmb{\beta}})\)</span> is the <span class="math inline">\(i\)</span>-th residual.</p>
+<p>As a result, we get the following plug-in estimator for <span class="math inline">\(\mathbb{V}_{\pmb{\beta}}\)</span>:
+<span class="math display">\[
+\widehat{\mathbb{V}}_{\pmb{\beta}}^{\text{HC0}}=
+\widehat{\mathbb{Q}}_{\pmb{XX}}^{-1}\widehat{\mathbb{A}}\widehat{\mathbb{Q}}_{\pmb{XX}}^{-1}
+\]</span></p>
 </div>
-<div id="cover" class="section level1 unnumbered">
-<h1>Cover</h1>
-<p><img src="images/cover.svg" /></p>
+<div id="homeskedastic-variance" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Homeskedastic Variance</h3>
 
 </div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="regression.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="asymptotic-normality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -169,7 +186,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/large-sample.Rmd",
 "text": "Edit"
 },
 "history": {

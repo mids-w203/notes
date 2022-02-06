@@ -75,8 +75,10 @@ $$
 where $\beta=\left(\mathbb{E}[\pmb{X}\pmb{X}']\right)^{-1}\mathbb{E}[\pmb{X}Y]$.
 :::
 
+::: {.theorem  #blperror name="Best Linear Predictor Error"}
 If the BLP exists, the linear projection error $e=Y-\mathscr{P}[Y|\pmb{X}]$ follows the following properties:
 
 1. $\mathbb{E}[\pmb{X}e]=\pmb{0}$
 2. $\mathbb{E}[e]=0$ if 
 $\pmb{X}'=\begin{bmatrix}1 & X_1 & \ldots & X_k \end{bmatrix}$.
+:::

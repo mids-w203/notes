@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>w203: Statistics for Data Science</title>
+  <title>3.1 Variance of Error | w203: Statistics for Data Science</title>
   <meta name="description" content="w203 course slides" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="w203: Statistics for Data Science" />
+  <meta property="og:title" content="3.1 Variance of Error | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="3.1 Variance of Error | w203: Statistics for Data Science" />
   
   <meta name="twitter:description" content="w203 course slides" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="regression.html"/>
+<link rel="prev" href="linear-conditional-expectation-function.html"/>
+<link rel="next" href="variance-of-ols-estimators.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -122,23 +122,29 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">w203: Statistics for Data Science</h1>
-<p class="author"><em>w203 Instructors</em></p>
-<p class="date"><em>2022-02-06</em></p>
-</div>
-<div id="cover" class="section level1 unnumbered">
-<h1>Cover</h1>
-<p><img src="images/cover.svg" /></p>
-
+<div id="variance-of-error" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Variance of Error</h2>
+<p>We first compute the (unconditional) variance of the error vector <span class="math inline">\(\pmb{e}\)</span>. The covariance matrix
+<span class="math display">\[
+\mathbb{V}[\pmb{e}]={\mathbb{E}\left[ \pmb{e}\pmb{e}&#39; \right]}-{\mathbb{E}\left[ \pmb{e} \right]}{\mathbb{E}\left[ \pmb{e}&#39; \right]}={\mathbb{E}\left[ \pmb{e}\pmb{e}&#39; \right]}\stackrel{\text{def}}{=}\mathbb{D}.
+\]</span>
+For <span class="math inline">\(i\neq j\)</span>, the errors <span class="math inline">\(e_i\)</span>,<span class="math inline">\(e_j\)</span> are independent. As a result, <span class="math inline">\({\mathbb{E}\left[ e_ie_j \right]}={\mathbb{E}\left[ e_i \right]}{\mathbb{E}\left[ e_j \right]}=0\)</span>. So, <span class="math inline">\(\mathbb{D}\)</span> is a diagonal matrix with the <span class="math inline">\(i\)</span>-th diagonal element <span class="math inline">\(\sigma_i^2\)</span>:
+<span class="math display">\[
+\mathbb{D}=\begin{bmatrix}
+\sigma_1^2 &amp; 0 &amp; \ldots &amp; 0 \\
+0 &amp; \sigma_2^2 &amp; \ldots &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; \ldots &amp; \sigma_n^2
+\end{bmatrix}.
+\]</span></p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="regression.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="linear-conditional-expectation-function.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variance-of-ols-estimators.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -169,7 +175,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/linear-CEF.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -149,7 +149,7 @@ e_i=Y_i-\pmb{X}'\pmb{\beta}, \mbox{ and }
 \widehat{e}_i=Y_i-\widehat{Y}_i.
 $$
 
-:::{.theorem}
+:::{.theorem #olserror name="Least Squares Error"}
 If \ $\widehat{\mathbb{Q}}_{\pmb{XX}}$ is non-singular, then  
 1. $\sum\limits_{i=1}^n\pmb{X}_i\widehat{e}_i=\pmb{0}$  
 2. $\sum\limits_{i=1}^n\widehat{e}_i=0$

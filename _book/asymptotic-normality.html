@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>w203: Statistics for Data Science</title>
+  <title>4.2 Asymptotic Normality | w203: Statistics for Data Science</title>
   <meta name="description" content="w203 course slides" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="w203: Statistics for Data Science" />
+  <meta property="og:title" content="4.2 Asymptotic Normality | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="4.2 Asymptotic Normality | w203: Statistics for Data Science" />
   
   <meta name="twitter:description" content="w203 course slides" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="regression.html"/>
+<link rel="prev" href="consistency-of-ols-estimators.html"/>
+<link rel="next" href="covariance-matrix-estimation.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -122,23 +122,79 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">w203: Statistics for Data Science</h1>
-<p class="author"><em>w203 Instructors</em></p>
-<p class="date"><em>2022-02-06</em></p>
+<div id="asymptotic-normality" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Asymptotic Normality</h2>
+<p>We start by revealing an alternative expression for the OLS estimators <span class="math inline">\(\widehat{\pmb{\beta}}\)</span> using matrix notation.
+<span class="math display">\[\begin{align}
+\widehat{\pmb{\beta}}
+&amp;=\left[\mathbb{X}&#39;\mathbb{X}\right]^{-1}\mathbb{X}&#39;\pmb{Y} \\
+&amp;=\left[\mathbb{X}&#39;\mathbb{X}\right]^{-1}\mathbb{X}&#39;(\mathbb{X}\pmb{\beta}+\pmb{e}) \\
+&amp;=\left[\mathbb{X}&#39;\mathbb{X}\right]^{-1}(\mathbb{X}&#39;\mathbb{X})\pmb{\beta}+
+\left[\mathbb{X}&#39;\mathbb{X}\right]^{-1}\mathbb{X}&#39;\pmb{e} \\
+&amp;=\pmb{\beta} + \left[\mathbb{X}&#39;\mathbb{X}\right]^{-1}\mathbb{X}&#39;\pmb{e}
+\end{align}\]</span>
+So,
+<span class="math display" id="eq:beta">\[\begin{equation}
+\widehat{\pmb{\beta}}-\pmb{\beta} = \left[\mathbb{X}&#39;\mathbb{X}\right]^{-1}\mathbb{X}&#39;\pmb{e}
+\tag{4.1}
+\end{equation}\]</span></p>
+<p>We can then multiply by <span class="math inline">\(\sqrt{n}\)</span> both sides of Equation <a href="asymptotic-normality.html#eq:beta">(4.1)</a> to get
+<span class="math display">\[\begin{align}
+\sqrt{n}\left(\widehat{\pmb{\beta}}-\pmb{\beta}\right)
+&amp;=\left( \frac{1}{n}\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i&#39; \right)^{-1}
+\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\pmb{X}_ie_i \right) \\
+&amp;=\widehat{\mathbb Q}_{\pmb{XX}}^{-1}
+\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\pmb{X}_ie_i \right)
+\end{align}\]</span>
+From the consistency of OLS estimators, we already have
+<span class="math display">\[ \widehat{\mathbb Q}_{\pmb{XX}}\xrightarrow[p]{\quad\quad}\mathbb{Q}_{\pmb{XX}}\]</span>
+Our aim now is to understand the distribution of the stochastic term (the second term) in the above expression.</p>
+<p>We first note (from i.i.d. and Theorem <a href="#thm:blperror"><strong>??</strong></a>) that
+<span class="math display">\[
+{\mathbb{E}\left[ \pmb{X}_ie_i \right]}={\mathbb{E}\left[ \pmb{X}e \right]}=\pmb{0}.
+\]</span>
+Let us compute the covariance matrix of <span class="math inline">\(\pmb{X}_ie_i\)</span>. Since the expectation vector is zero, we have
+<span class="math display">\[
+\mathbb{V}[\pmb{X}_ie_i]={\mathbb{E}\left[ \pmb{X}_ie_i(\pmb{X}_ie_i)&#39; \right]}={\mathbb{E}\left[ \pmb{X}e(\pmb{X}e)&#39; \right]}={\mathbb{E}\left[ \pmb{X}\pmb{X}&#39;e^2 \right]}\stackrel{\text{def}}{=}\mathbb{A}.
+\]</span>
+As any function of <span class="math inline">\(\{(Y_i,\pmb{X}_i)\}\)</span>’s are independent, <span class="math inline">\(\{\pmb{X}_ie_i\}\)</span>’s are independent. By the (multivariate) <strong>Central Limit Theorem</strong>, as <span class="math inline">\(n\to\infty\)</span>
+<span class="math display">\[
+\frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\pmb{X}_ie_i
+\xrightarrow[d]{\quad\quad}\mathcal{N}(\pmb{0},\mathbb{A}).
+\]</span>
+There is a small technicality here, we must have <span class="math inline">\(\mathbb{A}&lt;\infty\)</span>. This can be imposed by a stronger regularity condition on the moments, e.g.,
+<span class="math inline">\({\mathbb{E}\left[ Y^4 \right]},{\mathbb{E}\left[ ||\pmb{X}||^4 \right]}&lt;\infty\)</span>.
+Putting everything together, we conclude
+<span class="math display">\[
+\sqrt{n}(\widehat{\pmb{\beta}}-\pmb{\beta})\xrightarrow[d]{\quad\quad}
+\mathbb{Q}_{\pmb{XX}}^{-1}\mathcal{N}(\pmb{0},\mathbb{A})
+=\mathcal{N}\left(0,\mathbb{Q}_{\pmb{XX}}^{-1}\mathbb{A}\mathbb{Q}_{\pmb{XX}}^{-1}\right)
+\]</span></p>
+<div class="theorem">
+<p><span id="thm:asympvar" class="theorem"><strong>Theorem 4.1  (Asymptotic Distribution of OLS Estimators) </strong></span>We assume the following:<br />
+1. The observations <span class="math inline">\(\{(Y_i,\pmb{X}_i)\}_{i=1}^n\)</span> are i.i.d from the joint
+distribution of <span class="math inline">\((Y,\pmb{X})\)</span><br />
+2. <span class="math inline">\({\mathbb{E}\left[ Y^4 \right]}&lt;\infty\)</span><br />
+3. <span class="math inline">\({\mathbb{E}\left[ ||\pmb{X}||^4 \right]}&lt;\infty\)</span><br />
+4. <span class="math inline">\(\mathbb{Q}_{\pmb{XX}}={\mathbb{E}\left[ \pmb{X}\pmb{X}&#39; \right]}\)</span> is positive-definite.
+Under these assumptions, as <span class="math inline">\(n\to\infty\)</span>
+<span class="math display">\[
+\sqrt{n}(\widehat{\pmb{\beta}}-\pmb{\beta})\xrightarrow[d]{\quad\quad}
+\mathcal{N}\left(\pmb{0},\mathbb{V}_{\pmb{\beta}}\right),
+\]</span>
+where
+<span class="math display">\[\mathbb{V}_{\pmb{\beta}}\stackrel{\text{def}}{=}\mathbb{Q}_{\pmb{XX}}^{-1}\mathbb{A}\mathbb{Q}_{\pmb{XX}}^{-1}\]</span>
+and <span class="math inline">\(\mathbb{Q}_{\pmb{XX}}={\mathbb{E}\left[ \pmb{X}\pmb{X}&#39; \right]}\)</span>, <span class="math inline">\(\mathbb{A}={\mathbb{E}\left[ \pmb{X}\pmb{X}&#39;e^2 \right]}\)</span>.</p>
 </div>
-<div id="cover" class="section level1 unnumbered">
-<h1>Cover</h1>
-<p><img src="images/cover.svg" /></p>
-
+<p>The covariance matrix <span class="math inline">\(\mathbb{V}_{\pmb{\beta}}\)</span> is called the <strong>asymptotic variance matrix</strong> of <span class="math inline">\(\widehat{\pmb{\beta}}\)</span>. The matrix is sometimes referred to as the <strong>sandwich</strong> form.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="regression.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="consistency-of-ols-estimators.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="covariance-matrix-estimation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -169,7 +225,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/large-sample.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>w203: Statistics for Data Science</title>
+  <title>3.1 Expectation of OLS Estimators | w203: Statistics for Data Science</title>
   <meta name="description" content="w203 course slides" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="w203: Statistics for Data Science" />
+  <meta property="og:title" content="3.1 Expectation of OLS Estimators | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="3.1 Expectation of OLS Estimators | w203: Statistics for Data Science" />
   
   <meta name="twitter:description" content="w203 course slides" />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="w203 Instructors" />
 
 
-<meta name="date" content="2022-02-06" />
+<meta name="date" content="2022-02-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="regression.html"/>
+<link rel="prev" href="least-squares-regression.html"/>
+<link rel="next" href="variance-of-ols-estimators.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -87,20 +87,10 @@
 <li class="chapter" data-level="2.3" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Errors and Residuals</a></li>
 <li class="chapter" data-level="2.4" data-path="model-in-matrix-notation.html"><a href="model-in-matrix-notation.html"><i class="fa fa-check"></i><b>2.4</b> Model in Matrix Notation</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="linear-conditional-expectation-function.html"><a href="linear-conditional-expectation-function.html"><i class="fa fa-check"></i><b>3</b> Linear Conditional Expectation Function</a>
+<li class="chapter" data-level="3" data-path="least-squares-regression.html"><a href="least-squares-regression.html"><i class="fa fa-check"></i><b>3</b> Least Squares Regression</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>3.1</b> Variance of Error</a></li>
+<li class="chapter" data-level="3.1" data-path="expectation-of-ols-estimators.html"><a href="expectation-of-ols-estimators.html"><i class="fa fa-check"></i><b>3.1</b> Expectation of OLS Estimators</a></li>
 <li class="chapter" data-level="3.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>3.2</b> Variance of OLS Estimators</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="large-sample-regression.html"><a href="large-sample-regression.html"><i class="fa fa-check"></i><b>4</b> Large-Sample Regression</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="consistency-of-ols-estimators.html"><a href="consistency-of-ols-estimators.html"><i class="fa fa-check"></i><b>4.1</b> Consistency of OLS Estimators</a></li>
-<li class="chapter" data-level="4.2" data-path="asymptotic-normality.html"><a href="asymptotic-normality.html"><i class="fa fa-check"></i><b>4.2</b> Asymptotic Normality</a></li>
-<li class="chapter" data-level="4.3" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html"><i class="fa fa-check"></i><b>4.3</b> Covariance Matrix Estimation</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#heteroskedastic-variance"><i class="fa fa-check"></i><b>4.3.1</b> Heteroskedastic Variance</a></li>
-<li class="chapter" data-level="4.3.2" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#homeskedastic-variance"><i class="fa fa-check"></i><b>4.3.2</b> Homeskedastic Variance</a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
@@ -122,23 +112,16 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">w203: Statistics for Data Science</h1>
-<p class="author"><em>w203 Instructors</em></p>
-<p class="date"><em>2022-02-06</em></p>
-</div>
-<div id="cover" class="section level1 unnumbered">
-<h1>Cover</h1>
-<p><img src="images/cover.svg" /></p>
-
+<div id="expectation-of-ols-estimators" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Expectation of OLS Estimators</h2>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="regression.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="least-squares-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variance-of-ols-estimators.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -169,7 +152,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/ols-regression.Rmd",
 "text": "Edit"
 },
 "history": {
