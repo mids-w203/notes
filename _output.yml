@@ -5,7 +5,7 @@ bookdown::gitbook:
     toc:
       before: |
         <li><a href="./">w203: Statistics for Data Science</a></li>
-        <li class="toc-logo"><a href="./"><img src="images/cover.svg"></a></li>
+        <li class="toc-logo"><a href="./"><img src="images/cover.png"></a></li>
     edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
