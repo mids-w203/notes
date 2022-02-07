@@ -16,4 +16,3 @@ $$
 $$
 
 ## Variance of OLS Estimators
-We define $\mathbb{V}_\widehat{\pmb{\beta}}:=V\left[\widehat{\pmb{\beta}}\right]$ as the covariance matrix of the OLS coefficients.

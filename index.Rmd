@@ -2,13 +2,10 @@
 title: 'w203: Statistics for Data Science'
 author: "w203 Instructors"
 date: "`r Sys.Date()`"
-output:
-  html_document:
-    df_print: paged
 documentclass: book
 bibliography:
-- book.bib
-- packages.bib
+  - book.bib
+  - packages.bib
 description: |
   w203 course slides
 github-repo: rstudio/bookdown-demo
@@ -18,4 +15,7 @@ site: bookdown::bookdown_site
 
 
 # Cover {-}
-![](./images/cover.svg)
+```{r echo=FALSE, out.width="85%"}
+knitr::include_graphics("./images/cover.png")
+```
+

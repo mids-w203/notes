@@ -38,7 +38,6 @@ $$
 \end{bmatrix}
 $$
 The $k\times k$ covariance matrix of $\pmb{X}$ is 
-$$
 \begin{align}
 V[\pmb{X}] &=\mathbb{E}[(\pmb{X}-\mathbb{E}[\pmb{X}])(\pmb{X}-\mathbb{E}[\pmb{X}])'] \\
 &=\begin{bmatrix}
@@ -48,7 +47,6 @@ V[\pmb{X}] &=\mathbb{E}[(\pmb{X}-\mathbb{E}[\pmb{X}])(\pmb{X}-\mathbb{E}[\pmb{X}
 \sigma_{k1} & \sigma_{k2}^2 & \ldots & \sigma_{k}^2 \\
 \end{bmatrix}_{k\times k}
 \end{align}
-$$
 where $\sigma_j=V[X_j]$ and $\sigma_{ij}=Cov[X_i,X_j]$ for $i,j=1,2,\ldots,k$ and $i\neq j$.
 
 ## Conditional Expectation Function

@@ -45,7 +45,6 @@ where
 $SSE(\pmb{\beta}):=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}'\pmb{\beta})^2$.
 
 We now express $SSE(\pmb{\beta})$ as a quadratic function of $\pmb{\beta}'$.
-$$
 \begin{align}
 SSE &=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}'\pmb{\beta})^2 \\
 &=\sum\limits_{i=1}^n Y_i^2 
@@ -61,7 +60,6 @@ SSE &=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}'\pmb{\beta})^2 \\
   - 2\pmb{\beta}'\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
   + \pmb{\beta}'\left(\sum\limits_{i=1}^n \pmb{X_i}\pmb{X_i}'\right)\pmb{\beta}
 \end{align}
-$$
 Taking partial derivative w.r.t. $\beta_j$, we get
 $$
 \frac{\partial}{\partial\beta_j}SSE(\pmb{\beta})=-2\left[\sum\limits_{i=1}^n\pmb{X_i}Y_i\right]_j 
@@ -106,13 +104,12 @@ $$
 $$
 
 Rewriting \@ref(eq:moment-0), we get
-$$
 \begin{equation}
 \widehat{\mathbb{Q}}_{\pmb{X}Y}=\widehat{\mathbb{Q}}_{\pmb{XX}}
 \widehat{\pmb{\beta}}.
 (\#eq:moment)
 \end{equation}
-$$
+
 Equation \@ref(eq:moment) is sometimes referred to as the first-order moment condition. For the uniqueness of solution, we require that
 $\widehat{\mathbb{Q}}_{\pmb{XX}}$ is non-singular. In that case, we can solve for $\widehat{\pmb{\beta}}$ to get,
 $$

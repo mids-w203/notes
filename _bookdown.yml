@@ -12,3 +12,12 @@ rmd_files:
     "references.Rmd",
     "appendix.Rmd"
     ]
+  latex: [
+    "index.Rmd",
+    "regression.Rmd",
+    "ols.Rmd",
+    "linear-CEF.Rmd",
+    "large-sample.Rmd",
+    "references.Rmd",
+    "appendix.Rmd"
+    ]
