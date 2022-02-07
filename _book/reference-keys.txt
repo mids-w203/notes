@@ -7,7 +7,7 @@ eq:moment
 thm:unlabeled-div-4
 thm:olserror
 eq:beta
-thm:unlabeled-div-6
+thm:asympvar
 regression
 conditional-expectation-function
 best-linear-predictor
@@ -26,4 +26,3 @@ covariance-matrix-estimation
 heteroskedastic-variance
 homeskedastic-variance
 proofs
-thm:asympvar
