@@ -25,4 +25,4 @@ asymptotic-normality
 covariance-matrix-estimation
 heteroskedastic-variance
 homeskedastic-variance
-proofs
+matrix-algebra

@@ -1,0 +1,4 @@
+# (APPENDIX) Appendix {-}
+
+```{r child="chapters/matrices.Rmd", echo=FALSE}
+```
