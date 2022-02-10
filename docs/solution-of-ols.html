@@ -4,34 +4,34 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.2 Solution of OLS | w203: Statistics for Data Science</title>
-  <meta name="description" content="w203 course slides" />
+  <title>5.1 Solution of OLS | w203: Statistics for Data Science</title>
+  <meta name="description" content="w203 course notes" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.2 Solution of OLS | w203: Statistics for Data Science" />
+  <meta property="og:title" content="5.1 Solution of OLS | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="w203 course slides" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="w203 course notes" />
+  <meta name="github-repo" content="mids-w203/notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.2 Solution of OLS | w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="5.1 Solution of OLS | w203: Statistics for Data Science" />
   
-  <meta name="twitter:description" content="w203 course slides" />
+  <meta name="twitter:description" content="w203 course notes" />
   
 
 <meta name="author" content="w203 Instructors" />
 
 
-<meta name="date" content="2022-02-09" />
+<meta name="date" content="2022-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="matrix-formulation.html"/>
+<link rel="prev" href="ordinary-least-squares.html"/>
 <link rel="next" href="errors-and-residuals.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -75,36 +75,45 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Cover</a></li>
-<li class="chapter" data-level="1" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>1</b> Regression</a>
+<li class="part"><span><b>I Probability Theory</b></span></li>
+<li class="chapter" data-level="1" data-path="probability-spaces.html"><a href="probability-spaces.html"><i class="fa fa-check"></i><b>1</b> Probability Spaces</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="conditional-expectation-function.html"><a href="conditional-expectation-function.html"><i class="fa fa-check"></i><b>1.1</b> Conditional Expectation Function</a></li>
-<li class="chapter" data-level="1.2" data-path="best-linear-predictor.html"><a href="best-linear-predictor.html"><i class="fa fa-check"></i><b>1.2</b> Best Linear Predictor</a></li>
+<li class="chapter" data-level="1.1" data-path="kolmogorovs-axioms.html"><a href="kolmogorovs-axioms.html"><i class="fa fa-check"></i><b>1.1</b> Kolmogorov’s Axioms</a></li>
+<li class="chapter" data-level="1.2" data-path="conditional-probability.html"><a href="conditional-probability.html"><i class="fa fa-check"></i><b>1.2</b> Conditional Probability</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>2</b> Ordinary Least Squares</a>
+<li class="chapter" data-level="2" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>2</b> Random Variables</a></li>
+<li class="part"><span><b>II Learning from Data</b></span></li>
+<li class="chapter" data-level="3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>3</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="4" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>4</b> Regression</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="matrix-formulation.html"><a href="matrix-formulation.html"><i class="fa fa-check"></i><b>2.1</b> Matrix Formulation</a></li>
-<li class="chapter" data-level="2.2" data-path="solution-of-ols.html"><a href="solution-of-ols.html"><i class="fa fa-check"></i><b>2.2</b> Solution of OLS</a></li>
-<li class="chapter" data-level="2.3" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Errors and Residuals</a></li>
-<li class="chapter" data-level="2.4" data-path="model-in-matrix-notation.html"><a href="model-in-matrix-notation.html"><i class="fa fa-check"></i><b>2.4</b> Model in Matrix Notation</a></li>
+<li class="chapter" data-level="4.1" data-path="conditional-expectation-function.html"><a href="conditional-expectation-function.html"><i class="fa fa-check"></i><b>4.1</b> Conditional Expectation Function</a></li>
+<li class="chapter" data-level="4.2" data-path="best-linear-predictor.html"><a href="best-linear-predictor.html"><i class="fa fa-check"></i><b>4.2</b> Best Linear Predictor</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="linear-conditional-expectation-function.html"><a href="linear-conditional-expectation-function.html"><i class="fa fa-check"></i><b>3</b> Linear Conditional Expectation Function</a>
+<li class="chapter" data-level="5" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>5</b> Ordinary Least Squares</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>3.1</b> Variance of Error</a></li>
-<li class="chapter" data-level="3.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>3.2</b> Variance of OLS Estimators</a></li>
+<li class="chapter" data-level="5.1" data-path="solution-of-ols.html"><a href="solution-of-ols.html"><i class="fa fa-check"></i><b>5.1</b> Solution of OLS</a></li>
+<li class="chapter" data-level="5.2" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>5.2</b> Errors and Residuals</a></li>
+<li class="chapter" data-level="5.3" data-path="matrix-notation.html"><a href="matrix-notation.html"><i class="fa fa-check"></i><b>5.3</b> Matrix Notation</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="large-sample-regression.html"><a href="large-sample-regression.html"><i class="fa fa-check"></i><b>4</b> Large-Sample Regression</a>
+<li class="chapter" data-level="6" data-path="linear-conditional-expectation-function.html"><a href="linear-conditional-expectation-function.html"><i class="fa fa-check"></i><b>6</b> Linear Conditional Expectation Function</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="consistency-of-ols-estimators.html"><a href="consistency-of-ols-estimators.html"><i class="fa fa-check"></i><b>4.1</b> Consistency of OLS Estimators</a></li>
-<li class="chapter" data-level="4.2" data-path="asymptotic-normality.html"><a href="asymptotic-normality.html"><i class="fa fa-check"></i><b>4.2</b> Asymptotic Normality</a></li>
-<li class="chapter" data-level="4.3" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html"><i class="fa fa-check"></i><b>4.3</b> Covariance Matrix Estimation</a>
+<li class="chapter" data-level="6.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>6.1</b> Variance of Error</a></li>
+<li class="chapter" data-level="6.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>6.2</b> Variance of OLS Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="large-sample-regression.html"><a href="large-sample-regression.html"><i class="fa fa-check"></i><b>7</b> Large-Sample Regression</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#heteroskedastic-variance"><i class="fa fa-check"></i><b>4.3.1</b> Heteroskedastic Variance</a></li>
-<li class="chapter" data-level="4.3.2" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#homeskedastic-variance"><i class="fa fa-check"></i><b>4.3.2</b> Homeskedastic Variance</a></li>
+<li class="chapter" data-level="7.1" data-path="consistency-of-ols-estimators.html"><a href="consistency-of-ols-estimators.html"><i class="fa fa-check"></i><b>7.1</b> Consistency of OLS Estimators</a></li>
+<li class="chapter" data-level="7.2" data-path="asymptotic-normality.html"><a href="asymptotic-normality.html"><i class="fa fa-check"></i><b>7.2</b> Asymptotic Normality</a></li>
+<li class="chapter" data-level="7.3" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html"><i class="fa fa-check"></i><b>7.3</b> Covariance Matrix Estimation</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#heteroskedastic-variance"><i class="fa fa-check"></i><b>7.3.1</b> Heteroskedastic Variance</a></li>
+<li class="chapter" data-level="7.3.2" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#homeskedastic-variance"><i class="fa fa-check"></i><b>7.3.2</b> Homeskedastic Variance</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>A</b> Matrix Algebra</a></li>
+<li class="chapter" data-level="B" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>B</b> Matrix Calculus</a></li>
 </ul>
 
       </nav>
@@ -122,92 +131,94 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solution-of-ols" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Solution of OLS</h2>
+<div id="solution-of-ols" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Solution of OLS</h2>
 <p>We rewrite the cost function as
 <span class="math display">\[
-\widehat{S}(\pmb{\beta})=\frac{1}{n}SSE(\pmb{\beta}),
+\widehat{S}({\boldsymbol{\beta}})=\frac{1}{n}SSE({\boldsymbol{\beta}}),
 \]</span>
 where
-<span class="math inline">\(SSE(\pmb{\beta}):=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}&#39;\pmb{\beta})^2\)</span>.</p>
-<p>We now express <span class="math inline">\(SSE(\pmb{\beta})\)</span> as a quadratic function of <span class="math inline">\(\pmb{\beta}&#39;\)</span>.
-<span class="math display">\[\begin{align}
-SSE &amp;=\sum\limits_{i=1}^n(Y_i-\pmb{X_i}&#39;\pmb{\beta})^2 \\
+<span class="math inline">\(SSE({\boldsymbol{\beta}})\stackrel{\text{def}}{=}\sum\limits_{i=1}^n(Y_i-{\boldsymbol{X_i}}{\boldsymbol{\beta}})^2\)</span>.</p>
+<p>We now express <span class="math inline">\(SSE({\boldsymbol{\beta}})\)</span> as a quadratic function of <span class="math inline">\({\boldsymbol{\beta}}\)</span>.
+<span class="math display">\[
+\begin{aligned}
+SSE &amp;=\sum\limits_{i=1}^n(Y_i-{\boldsymbol{X_i}}{\boldsymbol{\beta}})^2 \\
 &amp;=\sum\limits_{i=1}^n Y_i^2
-  - 2\sum\limits_{i=1}^n Y_i(\pmb{X_i}&#39;\pmb{\beta})
-  + \sum\limits_{i=1}^n (\pmb{X_i}&#39;\pmb{\beta})^2 \\
+  - 2\sum\limits_{i=1}^n Y_i({\boldsymbol{X_i}}{\boldsymbol{\beta}})
+  + \sum\limits_{i=1}^n ({\boldsymbol{X_i}}{\boldsymbol{\beta}})^2 \\
 &amp;=\sum\limits_{i=1}^n Y_i^2
-  - 2\sum\limits_{i=1}^n Y_i(\pmb{\beta}&#39;\pmb{X_i})
-  + \sum\limits_{i=1}^n (\pmb{X_i}&#39;\pmb{\beta})(\pmb{X_i}&#39;\pmb{\beta}) \\
+  - 2\sum\limits_{i=1}^n Y_i({\boldsymbol{\beta}}^T{\boldsymbol{X_i}}^T)
+  + \sum\limits_{i=1}^n ({\boldsymbol{X_i}}{\boldsymbol{\beta}})({\boldsymbol{X_i}}{\boldsymbol{\beta}}) \\
 &amp;=\sum\limits_{i=1}^n Y_i^2
-  - 2\sum\limits_{i=1}^n \pmb{\beta}&#39;(Y_i\pmb{X_i})
-  + \sum\limits_{i=1}^n (\pmb{\beta}&#39;\pmb{X_i})(\pmb{X_i}&#39;\pmb{\beta}) \\
+  - 2\sum\limits_{i=1}^n {\boldsymbol{\beta}}^T(Y_i{\boldsymbol{X_i}}^T)
+  + \sum\limits_{i=1}^n ({\boldsymbol{\beta}}^T{\boldsymbol{X_i}}^T)({\boldsymbol{X_i}}{\boldsymbol{\beta}}) \\
 &amp;=\left(\sum\limits_{i=1}^n Y_i^2\right)
-  - 2\pmb{\beta}&#39;\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
-  + \pmb{\beta}&#39;\left(\sum\limits_{i=1}^n \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}
-\end{align}\]</span>
+  - 2{\boldsymbol{\beta}}^T\left(\sum\limits_{i=1}^n{\boldsymbol{X_i}}^TY_i\right)
+  + {\boldsymbol{\beta}}^T\left(\sum\limits_{i=1}^n {\boldsymbol{X_i}}^T{\boldsymbol{X_i}}\right){\boldsymbol{\beta}}
+\end{aligned}
+\]</span>
 Taking partial derivative w.r.t. <span class="math inline">\(\beta_j\)</span>, we get
 <span class="math display">\[
-\frac{\partial}{\partial\beta_j}SSE(\pmb{\beta})=-2\left[\sum\limits_{i=1}^n\pmb{X_i}Y_i\right]_j
-+ 2\left[\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}\right]_j.
+\frac{\partial}{\partial\beta_j}SSE({\boldsymbol{\beta}})=-2\left[\sum\limits_{i=1}^n{\boldsymbol{X_i}}^TY_i\right]_j
++ 2\left[\left(\sum\limits_{i=1}^n  {\boldsymbol{X_i}}^T{\boldsymbol{X_i}}\right){\boldsymbol{\beta}}\right]_j.
 \]</span></p>
 <p>Therefore,
 <span class="math display">\[
-\frac{\partial}{\partial\pmb{\beta}}SSE(\pmb{\beta})
-=-2\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
-+ 2\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\pmb{\beta}.
+\frac{\partial}{\partial{\boldsymbol{\beta}}}SSE({\boldsymbol{\beta}})
+=-2\left(\sum\limits_{i=1}^n{\boldsymbol{X_i}}^TY_i\right)
++ 2\left(\sum\limits_{i=1}^n  {\boldsymbol{X_i}}^T{\boldsymbol{X_i}}\right){\boldsymbol{\beta}}.
 \]</span></p>
-<p>In order to miniminize <span class="math inline">\(SSE(\pmb{\beta})\)</span>, a necessary condition for <span class="math inline">\(\widehat{\pmb{\beta}}\)</span> is
+<p>In order to miniminize <span class="math inline">\(SSE({\boldsymbol{\beta}})\)</span>, a necessary condition for <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span> is
 <span class="math display">\[
-\frac{\partial}{\partial\pmb{\beta}}SSE(\pmb{\beta})\bigg|_{\pmb{\beta}
-=\widehat{\pmb{\beta}}}=\pmb{0},
+\frac{\partial}{\partial{\boldsymbol{\beta}}}SSE({\boldsymbol{\beta}})\bigg|_{{\boldsymbol{\beta}}
+=\widehat{{\boldsymbol{\beta}}}}={\boldsymbol{0}},
 \]</span>
 i.e.,
 <span class="math display">\[
--2\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
-+ 2\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\widehat{\pmb{\beta}}
-=\pmb{0}
+-2\left(\sum\limits_{i=1}^n{\boldsymbol{X_i}}^TY_i\right)
++ 2\left(\sum\limits_{i=1}^n  {\boldsymbol{X_i}}^T{\boldsymbol{X_i}}\right)\widehat{{\boldsymbol{\beta}}}
+={\boldsymbol{0}}
 \]</span>
 So,
 <span class="math display" id="eq:moment-0">\[\begin{equation}
-\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right)
-=\left(\sum\limits_{i=1}^n  \pmb{X_i}\pmb{X_i}&#39;\right)\widehat{\pmb{\beta}}
-\tag{2.1}
+\left(\sum\limits_{i=1}^n{\boldsymbol{X_i}}^TY_i\right)
+=\left(\sum\limits_{i=1}^n  {\boldsymbol{X_i}}^T{\boldsymbol{X_i}}\right)\widehat{{\boldsymbol{\beta}}}
+\tag{5.1}
 \end{equation}\]</span></p>
-<p>Both the left and right hand side of the above equation are <span class="math inline">\(k+1\)</span> vectors. So, we have a system of <span class="math inline">\((k+1)\)</span> linear equations with <span class="math inline">\((k+1)\)</span> unknowns—the elements of <span class="math inline">\(\pmb{\beta}\)</span>.</p>
+<p>Both the left and right hand side of the above equation are <span class="math inline">\(k+1\)</span> vectors. So, we have a system of <span class="math inline">\((k+1)\)</span> linear equations with <span class="math inline">\((k+1)\)</span> unknowns—the elements of <span class="math inline">\({\boldsymbol{\beta}}\)</span>.</p>
 <p>Let us define</p>
 <p><span class="math display">\[
-\widehat{\mathbb{Q}}_{\pmb{XX}}
-=\frac{1}{n}\left(\sum\limits_{i=1}^n\pmb{X_i}\pmb{X_i}&#39;\right)
+\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}
+=\frac{1}{n}\left(\sum\limits_{i=1}^n{\boldsymbol{X_i}}^T{\boldsymbol{X_i}}\right)
 \mbox{ and }
-\widehat{\mathbb{Q}}_{\pmb{X}Y}
-=\frac{1}{n}\left(\sum\limits_{i=1}^n\pmb{X_i}Y_i\right).
+\widehat{\mathbb{Q}}_{{\boldsymbol{X}}Y}
+=\frac{1}{n}\left(\sum\limits_{i=1}^n{\boldsymbol{X_i}}^TY_i\right).
 \]</span></p>
-<p>Rewriting <a href="solution-of-ols.html#eq:moment-0">(2.1)</a>, we get
+<p>Rewriting <a href="solution-of-ols.html#eq:moment-0">(5.1)</a>, we get
 <span class="math display" id="eq:moment">\[\begin{equation}
-\widehat{\mathbb{Q}}_{\pmb{X}Y}=\widehat{\mathbb{Q}}_{\pmb{XX}}
-\widehat{\pmb{\beta}}.
-\tag{2.2}
+\widehat{\mathbb{Q}}_{{\boldsymbol{X}}Y}=\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}
+\widehat{{\boldsymbol{\beta}}}.
+\tag{5.2}
 \end{equation}\]</span></p>
-<p>Equation <a href="solution-of-ols.html#eq:moment">(2.2)</a> is sometimes referred to as the first-order moment condition. For the uniqueness of solution, we require that
-<span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular. In that case, we can solve for <span class="math inline">\(\widehat{\pmb{\beta}}\)</span> to get,
+<p>Equation <a href="solution-of-ols.html#eq:moment">(5.2)</a> is sometimes referred to as the first-order moment condition. For the uniqueness of solution, we require that
+<span class="math inline">\(\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}\)</span> is non-singular. In that case, we can solve for <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span> to get,
 <span class="math display">\[
-\widehat{\pmb{\beta}}=\left[\widehat{\mathbb{Q}}_{\pmb{XX}}\right]^{-1}
-\widehat{\mathbb{Q}}_{\pmb{X}Y}.
+\widehat{{\boldsymbol{\beta}}}=\left[\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}\right]^{-1}
+\widehat{\mathbb{Q}}_{{\boldsymbol{X}}Y}.
 \]</span>
-To verify that the above choice minimizes <span class="math inline">\(SSE(\pmb{\beta})\)</span>,
+To verify that the above choice minimizes <span class="math inline">\(SSE({\boldsymbol{\beta}})\)</span>,
 one can consider the second-order moment conditions.
 <span class="math display">\[
-\frac{\partial^2}{\partial\pmb{\beta}\partial\pmb{\beta}&#39;}SSE(\pmb{\beta})
-=2\widehat{\mathbb{Q}}_{\pmb{XX}}.
+\frac{\partial^2}{\partial{\boldsymbol{\beta}}\partial{\boldsymbol{\beta}}^T}SSE({\boldsymbol{\beta}})
+=2\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}.
 \]</span>
-If <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, it is also positive-definite. So, we have actually proved the following theorem.</p>
+If <span class="math inline">\(\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}\)</span> is non-singular, it is also positive-definite. So, we have actually proved the following theorem.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-4" class="theorem"><strong>Theorem 2.1  </strong></span>If  <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}\)</span> is non-singular, then the
+<p><span id="thm:unlabeled-div-2" class="theorem"><strong>Theorem 5.1  </strong></span>If  <span class="math inline">\(\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}\)</span> is non-singular, then the
 least squares estimator is unique, and is given by
 <span class="math display">\[
-\widehat{\pmb{\beta}}=\left[\widehat{\mathbb{Q}}_{\pmb{XX}}\right]^{-1}
-\widehat{\mathbb{Q}}_{\pmb{X}Y}.
+\widehat{{\boldsymbol{\beta}}}=\left[\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}\right]^{-1}
+\widehat{\mathbb{Q}}_{{\boldsymbol{X}}Y}.
 \]</span></p>
 </div>
 </div>
@@ -216,7 +227,7 @@ least squares estimator is unique, and is given by
           </div>
         </div>
       </div>
-<a href="matrix-formulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ordinary-least-squares.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="errors-and-residuals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -248,7 +259,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/chapters/ols.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/ols.Rmd",
 "text": "Edit"
 },
 "history": {

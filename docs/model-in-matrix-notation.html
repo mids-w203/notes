@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2.4 Model in Matrix Notation | w203: Statistics for Data Science</title>
-  <meta name="description" content="w203 course slides" />
+  <title>5.3 Model in Matrix Notation | w203: Statistics for Data Science</title>
+  <meta name="description" content="w203 course notes" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2.4 Model in Matrix Notation | w203: Statistics for Data Science" />
+  <meta property="og:title" content="5.3 Model in Matrix Notation | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="w203 course slides" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="w203 course notes" />
+  <meta name="github-repo" content="mids-w203/notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2.4 Model in Matrix Notation | w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="5.3 Model in Matrix Notation | w203: Statistics for Data Science" />
   
-  <meta name="twitter:description" content="w203 course slides" />
+  <meta name="twitter:description" content="w203 course notes" />
   
 
 <meta name="author" content="w203 Instructors" />
 
 
-<meta name="date" content="2022-02-09" />
+<meta name="date" content="2022-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -75,31 +75,39 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Cover</a></li>
-<li class="chapter" data-level="1" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>1</b> Regression</a>
+<li class="part"><span><b>I Probability Theory</b></span></li>
+<li class="chapter" data-level="1" data-path="probability-spaces.html"><a href="probability-spaces.html"><i class="fa fa-check"></i><b>1</b> Probability Spaces</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="conditional-expectation-function.html"><a href="conditional-expectation-function.html"><i class="fa fa-check"></i><b>1.1</b> Conditional Expectation Function</a></li>
-<li class="chapter" data-level="1.2" data-path="best-linear-predictor.html"><a href="best-linear-predictor.html"><i class="fa fa-check"></i><b>1.2</b> Best Linear Predictor</a></li>
+<li class="chapter" data-level="1.1" data-path="kolmogorovs-axioms.html"><a href="kolmogorovs-axioms.html"><i class="fa fa-check"></i><b>1.1</b> Kolmogorov’s Axioms</a></li>
+<li class="chapter" data-level="1.2" data-path="conditional-probability.html"><a href="conditional-probability.html"><i class="fa fa-check"></i><b>1.2</b> Conditional Probability</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>2</b> Ordinary Least Squares</a>
+<li class="chapter" data-level="2" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>2</b> Random Variables</a></li>
+<li class="part"><span><b>II Learning from Data</b></span></li>
+<li class="chapter" data-level="3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>3</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="4" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>4</b> Regression</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="matrix-formulation.html"><a href="matrix-formulation.html"><i class="fa fa-check"></i><b>2.1</b> Matrix Formulation</a></li>
-<li class="chapter" data-level="2.2" data-path="solution-of-ols.html"><a href="solution-of-ols.html"><i class="fa fa-check"></i><b>2.2</b> Solution of OLS</a></li>
-<li class="chapter" data-level="2.3" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Errors and Residuals</a></li>
-<li class="chapter" data-level="2.4" data-path="model-in-matrix-notation.html"><a href="model-in-matrix-notation.html"><i class="fa fa-check"></i><b>2.4</b> Model in Matrix Notation</a></li>
+<li class="chapter" data-level="4.1" data-path="conditional-expectation-function.html"><a href="conditional-expectation-function.html"><i class="fa fa-check"></i><b>4.1</b> Conditional Expectation Function</a></li>
+<li class="chapter" data-level="4.2" data-path="best-linear-predictor.html"><a href="best-linear-predictor.html"><i class="fa fa-check"></i><b>4.2</b> Best Linear Predictor</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="linear-conditional-expectation-function.html"><a href="linear-conditional-expectation-function.html"><i class="fa fa-check"></i><b>3</b> Linear Conditional Expectation Function</a>
+<li class="chapter" data-level="5" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>5</b> Ordinary Least Squares</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>3.1</b> Variance of Error</a></li>
-<li class="chapter" data-level="3.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>3.2</b> Variance of OLS Estimators</a></li>
+<li class="chapter" data-level="5.1" data-path="solution-of-ols.html"><a href="solution-of-ols.html"><i class="fa fa-check"></i><b>5.1</b> Solution of OLS</a></li>
+<li class="chapter" data-level="5.2" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>5.2</b> Errors and Residuals</a></li>
+<li class="chapter" data-level="5.3" data-path="model-in-matrix-notation.html"><a href="model-in-matrix-notation.html"><i class="fa fa-check"></i><b>5.3</b> Model in Matrix Notation</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="large-sample-regression.html"><a href="large-sample-regression.html"><i class="fa fa-check"></i><b>4</b> Large-Sample Regression</a>
+<li class="chapter" data-level="6" data-path="linear-conditional-expectation-function.html"><a href="linear-conditional-expectation-function.html"><i class="fa fa-check"></i><b>6</b> Linear Conditional Expectation Function</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="consistency-of-ols-estimators.html"><a href="consistency-of-ols-estimators.html"><i class="fa fa-check"></i><b>4.1</b> Consistency of OLS Estimators</a></li>
-<li class="chapter" data-level="4.2" data-path="asymptotic-normality.html"><a href="asymptotic-normality.html"><i class="fa fa-check"></i><b>4.2</b> Asymptotic Normality</a></li>
-<li class="chapter" data-level="4.3" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html"><i class="fa fa-check"></i><b>4.3</b> Covariance Matrix Estimation</a>
+<li class="chapter" data-level="6.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>6.1</b> Variance of Error</a></li>
+<li class="chapter" data-level="6.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>6.2</b> Variance of OLS Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="large-sample-regression.html"><a href="large-sample-regression.html"><i class="fa fa-check"></i><b>7</b> Large-Sample Regression</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#heteroskedastic-variance"><i class="fa fa-check"></i><b>4.3.1</b> Heteroskedastic Variance</a></li>
-<li class="chapter" data-level="4.3.2" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#homeskedastic-variance"><i class="fa fa-check"></i><b>4.3.2</b> Homeskedastic Variance</a></li>
+<li class="chapter" data-level="7.1" data-path="consistency-of-ols-estimators.html"><a href="consistency-of-ols-estimators.html"><i class="fa fa-check"></i><b>7.1</b> Consistency of OLS Estimators</a></li>
+<li class="chapter" data-level="7.2" data-path="asymptotic-normality.html"><a href="asymptotic-normality.html"><i class="fa fa-check"></i><b>7.2</b> Asymptotic Normality</a></li>
+<li class="chapter" data-level="7.3" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html"><i class="fa fa-check"></i><b>7.3</b> Covariance Matrix Estimation</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#heteroskedastic-variance"><i class="fa fa-check"></i><b>7.3.1</b> Heteroskedastic Variance</a></li>
+<li class="chapter" data-level="7.3.2" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#homeskedastic-variance"><i class="fa fa-check"></i><b>7.3.2</b> Homeskedastic Variance</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -122,30 +130,30 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="model-in-matrix-notation" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Model in Matrix Notation</h2>
+<div id="model-in-matrix-notation" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Model in Matrix Notation</h2>
 <p>Taking the definition of errors from the last section, we can write down a system of <span class="math inline">\(n\)</span> linear equations:
 <span class="math display">\[\begin{align}
-Y_1 &amp;= \pmb{X_1}&#39;\pmb{\beta} + e_1 \\
-Y_2 &amp;= \pmb{X_2}&#39;\pmb{\beta} + e_2 \\
+Y_1 &amp;= {\boldsymbol{X_1}}^T{\boldsymbol{\beta}} + e_1 \\
+Y_2 &amp;= {\boldsymbol{X_2}}^T{\boldsymbol{\beta}} + e_2 \\
 &amp; \vdots \\
-Y_n &amp;= \pmb{X_1}&#39;\pmb{\beta} + e_n
+Y_n &amp;= {\boldsymbol{X_1}}^T{\boldsymbol{\beta}} + e_n
 \end{align}\]</span></p>
 <p>Define
 <span class="math display">\[
-\pmb{Y}=\begin{bmatrix}
+{\boldsymbol{Y}}=\begin{bmatrix}
 Y_1 \\
 Y_2 \\
 \vdots \\
 Y_n
 \end{bmatrix}_{n\times1},\
 \mathbb{X}=\begin{bmatrix}
-\pmb{X}_1 \\
-\pmb{X}_2 \\
+{\boldsymbol{X}}_1 \\
+{\boldsymbol{X}}_2 \\
 \vdots \\
-\pmb{X}_n
+{\boldsymbol{X}}_n
 \end{bmatrix}_{n\times(k+1)}, \mbox{ and }
-\pmb{e}=\begin{bmatrix}
+{\boldsymbol{e}}=\begin{bmatrix}
 e_1 \\
 e_2 \\
 \vdots \\
@@ -154,7 +162,7 @@ e_n
 \]</span>
 We can now rewrite the system as the following:
 <span class="math display">\[
-\pmb{Y}=\mathbb{X}\pmb{\beta}+\pmb{e}.
+{\boldsymbol{Y}}=\mathbb{X}{\boldsymbol{\beta}}+{\boldsymbol{e}}.
 \]</span>
 Note that
 <span class="math display">\[
@@ -167,25 +175,25 @@ Note that
 \]</span></p>
 <p>We also note that
 <span class="math display">\[
-\widehat{Q}_{\pmb{XX}}=\sum\limits_{i=1}^n\pmb{X}_i&#39;\pmb{X}_i=
-\mathbb{X}&#39;\mathbb{X},
+\widehat{Q}_{{\boldsymbol{XX}}}=\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T{\boldsymbol{X}}_i=
+\mathbb{X}^T\mathbb{X},
 \]</span>
 and
 <span class="math display">\[
-\widehat{Q}_{\pmb{X}Y}=\sum\limits_{i=1}^n\pmb{X}_iY_i=
-\mathbb{X}&#39;\pmb{Y}.
+\widehat{Q}_{{\boldsymbol{X}}Y}=\sum\limits_{i=1}^n{\boldsymbol{X}}_iY_i=
+\mathbb{X}^T{\boldsymbol{Y}}.
 \]</span>
 So, we have write the least squares estimator as
 <span class="math display">\[
-\widehat{\pmb{\beta}}=\left[\mathbb{X}&#39;\mathbb{X}\right]^{-1}\mathbb{X}\pmb{Y}.
+\widehat{{\boldsymbol{\beta}}}=\left[\mathbb{X}^T\mathbb{X}\right]^{-1}\mathbb{X}{\boldsymbol{Y}}.
 \]</span>
 Similarly, the residual vector is
 <span class="math display">\[
-\widehat{\pmb{e}}=\pmb{Y}-\mathbb{X}\widehat{\pmb{\beta}}.
+\widehat{{\boldsymbol{e}}}={\boldsymbol{Y}}-\mathbb{X}\widehat{{\boldsymbol{\beta}}}.
 \]</span>
 As a consequence, we can write
 <span class="math display">\[
-\mathbb{X}&#39;\widehat{\pmb{e}}=\pmb{0}.
+\mathbb{X}^T\widehat{{\boldsymbol{e}}}={\boldsymbol{0}}.
 \]</span></p>
 
 </div>
@@ -227,7 +235,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/chapters/ols.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/ols.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | w203: Statistics for Data Science</title>
+  <title>5.3 Matrix Notation | w203: Statistics for Data Science</title>
   <meta name="description" content="w203 course notes" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | w203: Statistics for Data Science" />
+  <meta property="og:title" content="5.3 Matrix Notation | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="mids-w203/notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="5.3 Matrix Notation | w203: Statistics for Data Science" />
   
   <meta name="twitter:description" content="w203 course notes" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="covariance-matrix-estimation.html"/>
-<link rel="next" href="matrix-algebra.html"/>
+<link rel="prev" href="errors-and-residuals.html"/>
+<link rel="next" href="linear-conditional-expectation-function.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -131,20 +131,74 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="matrix-notation" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Matrix Notation</h2>
+<p>Taking the definition of errors from the last section, we can write down a system of <span class="math inline">\(n\)</span> linear equations:
+<span class="math display">\[
+\begin{aligned}
+Y_1 &amp;= {\boldsymbol{X_1}}{\boldsymbol{\beta}} + e_1 \\
+Y_2 &amp;= {\boldsymbol{X_2}}{\boldsymbol{\beta}} + e_2 \\
+&amp; \vdots \\
+Y_n &amp;= {\boldsymbol{X_1}}{\boldsymbol{\beta}} + e_n
+\end{aligned}
+\]</span></p>
+<p>Define
+<span class="math display">\[
+{\boldsymbol{Y}}=\begin{bmatrix}
+Y_1 \\
+Y_2 \\
+\vdots \\
+Y_n
+\end{bmatrix}_{n\times1},\
+\mathbb{X}=\begin{bmatrix}
+1 &amp; X_{[1]1} &amp; X_{[2]1} &amp; \ldots &amp; X_{[k]1} \\
+1 &amp; X_{[1]2} &amp; X_{[2]2} &amp; \ldots &amp; X_{[k]2} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+1 &amp; X_{[1]n} &amp; X_{[k]n} &amp; \ldots &amp; X_{[k]n}
+\end{bmatrix},\mbox{ and }
+{\boldsymbol{e}}=\begin{bmatrix}
+e_1 \\
+e_2 \\
+\vdots \\
+e_n
+\end{bmatrix}_{n\times1}.
+\]</span>
+We can now rewrite the system as the following:
+<span class="math display">\[
+{\boldsymbol{Y}}={\mathbb{X}}{\boldsymbol{\beta}}+{\boldsymbol{e}}.
+\]</span>
+We also note that
+<span class="math display">\[
+\widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}=\sum\limits_{i=1}^n{\boldsymbol{X}}^T_i{\boldsymbol{X}}_i=
+{\mathbb{X}}^T{\mathbb{X}},
+\]</span>
+and
+<span class="math display">\[
+\widehat{{\mathbb{Q}}}_{{\boldsymbol{X}}Y}=\sum\limits_{i=1}^n{\boldsymbol{X}}_i^TY_i=
+{\mathbb{X}}^T{\boldsymbol{Y}}.
+\]</span>
+So, we have write the least squares estimator as
+<span class="math display">\[
+\widehat{{\boldsymbol{\beta}}}=\left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T{\boldsymbol{Y}}.
+\]</span>
+Similarly, the residual vector is
+<span class="math display">\[
+\widehat{{\boldsymbol{e}}}={\boldsymbol{Y}}-{\mathbb{X}}\widehat{{\boldsymbol{\beta}}}.
+\]</span>
+As a consequence, we can write
+<span class="math display">\[
+{\mathbb{X}}^T\widehat{{\boldsymbol{e}}}={\boldsymbol{0}}.
+\]</span></p>
 
 </div>
-
-
-
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="covariance-matrix-estimation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="matrix-algebra.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="errors-and-residuals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linear-conditional-expectation-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -175,7 +229,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/references.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/ols.Rmd",
 "text": "Edit"
 },
 "history": {

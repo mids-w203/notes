@@ -1,0 +1,48 @@
+# (APPENDIX) Appendix {-}
+
+# Matrix Algebra
+In this book, we reserve **boldface** letter to denote vectors (of scalars and random variables), and "blackboard bold" typeface to denote matrices. 
+
+We always write a vector as a column
+$$
+\pmb{v}=\begin{bmatrix}
+v_1 \\
+v_2 \\
+\vdots \\
+v_k
+\end{bmatrix}_{k\times1}
+$$
+
+:::{.definition name="Transpose of a Matrix" #mattrans}
+Let $\mathbb{A}_{k\times l}$ be a matrix, it's  transpose, denoted $\mathbb{A}^T$, is an $l\times k$ matrix such that
+the $(i,j)$-th entry of $\mathbb{A}$ becomes the $(j,i)$-th entry of $\mathbb{A}^T$.
+:::
+
+
+::: {.definition #matsum name="Sum of Matrices"}
+  Let $\mathbb{A},\mathbb{B}$ are matrices both of size $k\times l$, then the sum $\mathbb{A}+\mathbb{B}$ is defined as the another matrix $\mathbb{C}$ size $k\times l$ such that the $(i,j)$-th entry is the sum of the $(i,j)$-th entries of $\mathbb A$ and $\mathbb B$. 
+  $$
+  \mathbb{C}=\begin{bmatrix}
+  a_{11}+b_{11} & a_{12}+b_{12} & \ldots & a_{1l}+b_{1l} \\
+  a_{21}+b_{21} & a_{22}+b_{22} & \ldots & a_{2l}+b_{2l} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{k1}+b_{k1} & a_{k2}+b_{k2} & \ldots & a_{kl}+b_{kl} \\
+  \end{bmatrix}_{k\times l}
+  $$
+
+:::
+
+::: {.definition #matprod name="Product of Matrices"}
+  Let $\mathbb{A},\mathbb{B}$ are matrices both of size $k\times l$, then the sum $\mathbb{A}+\mathbb{B}$ is defined as the another matrix $\mathbb{C}$ size $k\times l$ such that the $(i,j)$-th entry is the sum of the $(i,j)$-th entries of $\mathbb A$ and $\mathbb B$. 
+  $$
+  \mathbb{C}=\begin{bmatrix}
+  a_{11}+b_{11} & a_{12}+b_{12} & \ldots & a_{1l}+b_{1l} \\
+  a_{21}+b_{21} & a_{22}+b_{22} & \ldots & a_{2l}+b_{2l} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{k1}+b_{k1} & a_{k2}+b_{k2} & \ldots & a_{kl}+b_{kl} \\
+  \end{bmatrix}_{k\times l}
+  $$
+
+:::
+
+# Matrix Calculus

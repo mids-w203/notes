@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.3 Covariance Matrix Estimation | w203: Statistics for Data Science</title>
-  <meta name="description" content="w203 course slides" />
+  <title>7.3 Covariance Matrix Estimation | w203: Statistics for Data Science</title>
+  <meta name="description" content="w203 course notes" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.3 Covariance Matrix Estimation | w203: Statistics for Data Science" />
+  <meta property="og:title" content="7.3 Covariance Matrix Estimation | w203: Statistics for Data Science" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="w203 course slides" />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  <meta property="og:description" content="w203 course notes" />
+  <meta name="github-repo" content="mids-w203/notes" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.3 Covariance Matrix Estimation | w203: Statistics for Data Science" />
+  <meta name="twitter:title" content="7.3 Covariance Matrix Estimation | w203: Statistics for Data Science" />
   
-  <meta name="twitter:description" content="w203 course slides" />
+  <meta name="twitter:description" content="w203 course notes" />
   
 
 <meta name="author" content="w203 Instructors" />
 
 
-<meta name="date" content="2022-02-09" />
+<meta name="date" content="2022-02-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -75,36 +75,45 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Cover</a></li>
-<li class="chapter" data-level="1" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>1</b> Regression</a>
+<li class="part"><span><b>I Probability Theory</b></span></li>
+<li class="chapter" data-level="1" data-path="probability-spaces.html"><a href="probability-spaces.html"><i class="fa fa-check"></i><b>1</b> Probability Spaces</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="conditional-expectation-function.html"><a href="conditional-expectation-function.html"><i class="fa fa-check"></i><b>1.1</b> Conditional Expectation Function</a></li>
-<li class="chapter" data-level="1.2" data-path="best-linear-predictor.html"><a href="best-linear-predictor.html"><i class="fa fa-check"></i><b>1.2</b> Best Linear Predictor</a></li>
+<li class="chapter" data-level="1.1" data-path="kolmogorovs-axioms.html"><a href="kolmogorovs-axioms.html"><i class="fa fa-check"></i><b>1.1</b> Kolmogorov’s Axioms</a></li>
+<li class="chapter" data-level="1.2" data-path="conditional-probability.html"><a href="conditional-probability.html"><i class="fa fa-check"></i><b>1.2</b> Conditional Probability</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>2</b> Ordinary Least Squares</a>
+<li class="chapter" data-level="2" data-path="random-variables.html"><a href="random-variables.html"><i class="fa fa-check"></i><b>2</b> Random Variables</a></li>
+<li class="part"><span><b>II Learning from Data</b></span></li>
+<li class="chapter" data-level="3" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>3</b> Hypothesis Testing</a></li>
+<li class="chapter" data-level="4" data-path="regression.html"><a href="regression.html"><i class="fa fa-check"></i><b>4</b> Regression</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="matrix-formulation.html"><a href="matrix-formulation.html"><i class="fa fa-check"></i><b>2.1</b> Matrix Formulation</a></li>
-<li class="chapter" data-level="2.2" data-path="solution-of-ols.html"><a href="solution-of-ols.html"><i class="fa fa-check"></i><b>2.2</b> Solution of OLS</a></li>
-<li class="chapter" data-level="2.3" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>2.3</b> Errors and Residuals</a></li>
-<li class="chapter" data-level="2.4" data-path="model-in-matrix-notation.html"><a href="model-in-matrix-notation.html"><i class="fa fa-check"></i><b>2.4</b> Model in Matrix Notation</a></li>
+<li class="chapter" data-level="4.1" data-path="conditional-expectation-function.html"><a href="conditional-expectation-function.html"><i class="fa fa-check"></i><b>4.1</b> Conditional Expectation Function</a></li>
+<li class="chapter" data-level="4.2" data-path="best-linear-predictor.html"><a href="best-linear-predictor.html"><i class="fa fa-check"></i><b>4.2</b> Best Linear Predictor</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="linear-conditional-expectation-function.html"><a href="linear-conditional-expectation-function.html"><i class="fa fa-check"></i><b>3</b> Linear Conditional Expectation Function</a>
+<li class="chapter" data-level="5" data-path="ordinary-least-squares.html"><a href="ordinary-least-squares.html"><i class="fa fa-check"></i><b>5</b> Ordinary Least Squares</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>3.1</b> Variance of Error</a></li>
-<li class="chapter" data-level="3.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>3.2</b> Variance of OLS Estimators</a></li>
+<li class="chapter" data-level="5.1" data-path="solution-of-ols.html"><a href="solution-of-ols.html"><i class="fa fa-check"></i><b>5.1</b> Solution of OLS</a></li>
+<li class="chapter" data-level="5.2" data-path="errors-and-residuals.html"><a href="errors-and-residuals.html"><i class="fa fa-check"></i><b>5.2</b> Errors and Residuals</a></li>
+<li class="chapter" data-level="5.3" data-path="matrix-notation.html"><a href="matrix-notation.html"><i class="fa fa-check"></i><b>5.3</b> Matrix Notation</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="large-sample-regression.html"><a href="large-sample-regression.html"><i class="fa fa-check"></i><b>4</b> Large-Sample Regression</a>
+<li class="chapter" data-level="6" data-path="linear-conditional-expectation-function.html"><a href="linear-conditional-expectation-function.html"><i class="fa fa-check"></i><b>6</b> Linear Conditional Expectation Function</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="consistency-of-ols-estimators.html"><a href="consistency-of-ols-estimators.html"><i class="fa fa-check"></i><b>4.1</b> Consistency of OLS Estimators</a></li>
-<li class="chapter" data-level="4.2" data-path="asymptotic-normality.html"><a href="asymptotic-normality.html"><i class="fa fa-check"></i><b>4.2</b> Asymptotic Normality</a></li>
-<li class="chapter" data-level="4.3" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html"><i class="fa fa-check"></i><b>4.3</b> Covariance Matrix Estimation</a>
+<li class="chapter" data-level="6.1" data-path="variance-of-error.html"><a href="variance-of-error.html"><i class="fa fa-check"></i><b>6.1</b> Variance of Error</a></li>
+<li class="chapter" data-level="6.2" data-path="variance-of-ols-estimators.html"><a href="variance-of-ols-estimators.html"><i class="fa fa-check"></i><b>6.2</b> Variance of OLS Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="large-sample-regression.html"><a href="large-sample-regression.html"><i class="fa fa-check"></i><b>7</b> Large-Sample Regression</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#heteroskedastic-variance"><i class="fa fa-check"></i><b>4.3.1</b> Heteroskedastic Variance</a></li>
-<li class="chapter" data-level="4.3.2" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#homeskedastic-variance"><i class="fa fa-check"></i><b>4.3.2</b> Homeskedastic Variance</a></li>
+<li class="chapter" data-level="7.1" data-path="consistency-of-ols-estimators.html"><a href="consistency-of-ols-estimators.html"><i class="fa fa-check"></i><b>7.1</b> Consistency of OLS Estimators</a></li>
+<li class="chapter" data-level="7.2" data-path="asymptotic-normality.html"><a href="asymptotic-normality.html"><i class="fa fa-check"></i><b>7.2</b> Asymptotic Normality</a></li>
+<li class="chapter" data-level="7.3" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html"><i class="fa fa-check"></i><b>7.3</b> Covariance Matrix Estimation</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#heteroskedastic-variance"><i class="fa fa-check"></i><b>7.3.1</b> Heteroskedastic Variance</a></li>
+<li class="chapter" data-level="7.3.2" data-path="covariance-matrix-estimation.html"><a href="covariance-matrix-estimation.html#homeskedastic-variance"><i class="fa fa-check"></i><b>7.3.2</b> Homeskedastic Variance</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>A</b> Matrix Algebra</a></li>
+<li class="chapter" data-level="B" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>B</b> Matrix Calculus</a></li>
 </ul>
 
       </nav>
@@ -122,45 +131,45 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="covariance-matrix-estimation" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Covariance Matrix Estimation</h2>
+<div id="covariance-matrix-estimation" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Covariance Matrix Estimation</h2>
 <p>We now turn our attention to the estimation of the sandwich matrix using a finite sample.</p>
-<div id="heteroskedastic-variance" class="section level3" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> Heteroskedastic Variance</h3>
-<p>Theorem <a href="asymptotic-normality.html#thm:asympvar">4.1</a> presented the asymptotic covariance matrix of
-<span class="math inline">\(\sqrt{n}(\widehat{\pmb{\beta}}-\pmb{\beta})\)</span> is
-<span class="math display">\[\mathbb{V}_{\pmb{\beta}}
-=\mathbb{Q}_{\pmb{XX}}^{-1}\mathbb{A}\mathbb{Q}_{\pmb{XX}}^{-1}.\]</span>
-Without imposing any homoskedasticity condition, we estimate <span class="math inline">\(\mathbb{V}_{\pmb{\beta}}\)</span> using a plug-in estimator.</p>
-<p>We have already seen that <span class="math inline">\(\widehat{\mathbb{Q}}_{\pmb{XX}}=\frac{1}{n}\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i&#39;\)</span> is a natural estimator for <span class="math inline">\(\mathbb{Q}_{\pmb{XX}}\)</span>. For <span class="math inline">\(\mathbb{A}\)</span>, we use the moment estimator
+<div id="heteroskedastic-variance" class="section level3" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Heteroskedastic Variance</h3>
+<p>Theorem <a href="asymptotic-normality.html#thm:asympvar">7.1</a> presented the asymptotic covariance matrix of
+<span class="math inline">\(\sqrt{n}(\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}})\)</span> is
+<span class="math display">\[\mathbb{V}_{{\boldsymbol{\beta}}}
+=\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}\mathbb{A}\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}.\]</span>
+Without imposing any homoskedasticity condition, we estimate <span class="math inline">\(\mathbb{V}_{{\boldsymbol{\beta}}}\)</span> using a plug-in estimator.</p>
+<p>We have already seen that <span class="math inline">\(\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}=\frac{1}{n}\sum\limits_{i=1}^n{\boldsymbol{X}}_i{\boldsymbol{X}}_i&#39;\)</span> is a natural estimator for <span class="math inline">\(\mathbb{Q}_{{\boldsymbol{XX}}}\)</span>. For <span class="math inline">\(\mathbb{A}\)</span>, we use the moment estimator
 <span class="math display">\[
-\widehat{\mathbb{A}}=\frac{1}{n}\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i&#39;\widehat{e}_i^2,
+\widehat{\mathbb{A}}=\frac{1}{n}\sum\limits_{i=1}^n{\boldsymbol{X}}_i{\boldsymbol{X}}_i&#39;\widehat{e}_i^2,
 \]</span>
-where <span class="math inline">\(\widehat{e}_i=(Y_i-\pmb{X}_i&#39;\widehat{\pmb{\beta}})\)</span> is the <span class="math inline">\(i\)</span>-th residual. As it turns out, <span class="math inline">\(\widehat{\mathbb{A}}\)</span> is a consistent estimator
+where <span class="math inline">\(\widehat{e}_i=(Y_i-{\boldsymbol{X}}_i&#39;\widehat{{\boldsymbol{\beta}}})\)</span> is the <span class="math inline">\(i\)</span>-th residual. As it turns out, <span class="math inline">\(\widehat{\mathbb{A}}\)</span> is a consistent estimator
 for <span class="math inline">\(\mathbb{A}\)</span>.</p>
-<p>As a result, we get the following plug-in estimator for <span class="math inline">\(\mathbb{V}_{\pmb{\beta}}\)</span>:
+<p>As a result, we get the following plug-in estimator for <span class="math inline">\(\mathbb{V}_{{\boldsymbol{\beta}}}\)</span>:
 <span class="math display">\[
-\widehat{\mathbb{V}}_{\pmb{\beta}}^{\text{HC0}}=
-\widehat{\mathbb{Q}}_{\pmb{XX}}^{-1}\widehat{\mathbb{A}}\widehat{\mathbb{Q}}_{\pmb{XX}}^{-1}
+\widehat{\mathbb{V}}_{{\boldsymbol{\beta}}}^{\text{HC0}}=
+\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}\widehat{\mathbb{A}}\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}
 \]</span>
 The estimator is also consistent. For a proof, see Hensen 2013.</p>
-<p>As a consequence, we can get the following estimator for the variance, <span class="math inline">\(\mathbb{V}_{\widehat{\pmb{\beta}}}\)</span>, of <span class="math inline">\(\widehat{\pmb{\beta}}\)</span> in the heteroskedastic case.
+<p>As a consequence, we can get the following estimator for the variance, <span class="math inline">\(\mathbb{V}_{\widehat{{\boldsymbol{\beta}}}}\)</span>, of <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span> in the heteroskedastic case.
 <span class="math display">\[\begin{align}
-\widehat{\mathbb{V}}^{\text{HC0}}_{\widehat{\pmb{\beta}}}
-&amp;=\frac{1}{n}\widehat{\mathbb{V}}_{\pmb{\beta}}^{\text{HC0}} \\
-&amp;=\frac{1}{n}\widehat{\mathbb{Q}}_{\pmb{XX}}^{-1}\widehat{\mathbb{A}}\widehat{\mathbb{Q}}_{\pmb{XX}}^{-1} \\
-&amp;=\frac{1}{n}\left(\frac{1}{n}\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i&#39;\right)^{-1}
-\left(\frac{1}{n}\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i&#39;\widehat{e}_i^2\right)
-\left(\frac{1}{n}\sum\limits_{i=1}^n\pmb{X}_i\pmb{X}_i&#39;\right)^{-1} \\
+\widehat{\mathbb{V}}^{\text{HC0}}_{\widehat{{\boldsymbol{\beta}}}}
+&amp;=\frac{1}{n}\widehat{\mathbb{V}}_{{\boldsymbol{\beta}}}^{\text{HC0}} \\
+&amp;=\frac{1}{n}\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}\widehat{\mathbb{A}}\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1} \\
+&amp;=\frac{1}{n}\left(\frac{1}{n}\sum\limits_{i=1}^n{\boldsymbol{X}}_i{\boldsymbol{X}}_i&#39;\right)^{-1}
+\left(\frac{1}{n}\sum\limits_{i=1}^n{\boldsymbol{X}}_i{\boldsymbol{X}}_i&#39;\widehat{e}_i^2\right)
+\left(\frac{1}{n}\sum\limits_{i=1}^n{\boldsymbol{X}}_i{\boldsymbol{X}}_i&#39;\right)^{-1} \\
 &amp;=\left(\mathbb{X}\mathbb{X}&#39;\right)^{-1}
 \mathbb{X}\mathbb{D}\mathbb{X}&#39;
 \left(\mathbb{X}\mathbb{X}&#39;\right)^{-1}
 \end{align}\]</span>
 where <span class="math inline">\(\mathbb{D}\)</span> is an <span class="math inline">\(n\times n\)</span> diagonal matrix with diagonal entries <span class="math inline">\(\widehat{e}_1^2,\widehat{e}_2^2,\ldots,\widehat{e}_n^2\)</span>.
-The estimator <span class="math inline">\(\widehat{\mathbb{V}}^{\text{HC0}}_{\widehat{\pmb{\beta}}}\)</span> is referred to as the <strong>robust error variance estimator</strong> for the OLS coefficients <span class="math inline">\(\widehat{\pmb{\beta}}\)</span>.</p>
+The estimator <span class="math inline">\(\widehat{\mathbb{V}}^{\text{HC0}}_{\widehat{{\boldsymbol{\beta}}}}\)</span> is referred to as the <strong>robust error variance estimator</strong> for the OLS coefficients <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span>.</p>
 </div>
-<div id="homeskedastic-variance" class="section level3" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> Homeskedastic Variance</h3>
+<div id="homeskedastic-variance" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Homeskedastic Variance</h3>
 
 </div>
 </div>
@@ -202,7 +211,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/chapters/large-sample.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/large-sample.Rmd",
 "text": "Edit"
 },
 "history": {

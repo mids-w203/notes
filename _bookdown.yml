@@ -6,15 +6,21 @@ language:
 rmd_files:
   html: [
     "index.Rmd",
-    "./chapters/regression.Rmd",
-    "./chapters/ols.Rmd",
-    "./chapters/linear-CEF.Rmd",
-    "chapters/large-sample.Rmd",
-    "chapters/references.Rmd",
-    "chapters/appendix.Rmd"
+    "probability-spaces.Rmd",
+    "random-variables.Rmd",
+    "hypothesis.Rmd",
+    "regression.Rmd",
+    "ols.Rmd",
+    "linear-CEF.Rmd",
+    "large-sample.Rmd",
+    "references.Rmd",
+    "appendix.Rmd"
     ]
   latex: [
     "index.Rmd",
+    "probability-spaces.Rmd",
+    "random-variables.Rmd",
+    "hypothesis.Rmd",
     "regression.Rmd",
     "ols.Rmd",
     "linear-CEF.Rmd",
