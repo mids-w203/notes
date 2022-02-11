@@ -138,15 +138,15 @@
 \begin{aligned}
 \widehat{{\boldsymbol{\beta}}}
 &amp;=\left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T{\boldsymbol{Y}} \\
-&amp;=\left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T({\mathbb{X}}{\boldsymbol{\beta}}+{\boldsymbol{e}}) \\
+&amp;=\left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T({\mathbb{X}}{\boldsymbol{\beta}}+{\boldsymbol{\varepsilon}}) \\
 &amp;=\left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}({\mathbb{X}}^T{\mathbb{X}}){\boldsymbol{\beta}}+
-\left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T{\boldsymbol{e}} \\
-&amp;={\boldsymbol{\beta}} + \left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T{\boldsymbol{e}}
+\left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T{\boldsymbol{\varepsilon}} \\
+&amp;={\boldsymbol{\beta}} + \left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T{\boldsymbol{\varepsilon}}
 \end{aligned}
 \]</span></p>
 <p>So,
 <span class="math display" id="eq:beta">\[\begin{equation}
-\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}} = \left[\mathbb{X}^T\mathbb{X}\right]^{-1}\mathbb{X}^T{\boldsymbol{e}}
+\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}} = \left[\mathbb{X}^T\mathbb{X}\right]^{-1}\mathbb{X}^T{\boldsymbol{\varepsilon}}
 \tag{7.1}
 \end{equation}\]</span></p>
 <p>We can then multiply by <span class="math inline">\(\sqrt{n}\)</span> both sides of Equation <a href="asymptotic-normality.html#eq:beta">(7.1)</a> to get
@@ -154,9 +154,9 @@
 \begin{aligned}
 \sqrt{n}\left(\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}}\right)
 &amp;=\left( \frac{1}{n}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T{\boldsymbol{X}}_i \right)^{-1}
-\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^Te_i \right) \\
+\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T\varepsilon_i \right) \\
 &amp;=\widehat{\mathbb Q}_{{\boldsymbol{XX}}}^{-1}
-\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^Te_i \right)
+\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T\varepsilon_i \right)
 \end{aligned}
 \]</span>
 From the consistency of OLS estimators, we already have
@@ -164,15 +164,15 @@ From the consistency of OLS estimators, we already have
 Our aim now is to understand the distribution of the stochastic term (the second term) in the above expression.</p>
 <p>We first note (from i.i.d. and Theorem <a href="best-linear-predictor.html#thm:blperror">4.4</a>) that
 <span class="math display">\[
-{\mathbb{E}\left[ {\boldsymbol{X}}_ie_i \right]}={\mathbb{E}\left[ {\boldsymbol{X}}e \right]}={\boldsymbol{0}}.
+{\mathbb{E}\left[ {\boldsymbol{X}}_i^T\varepsilon_i \right]}={\mathbb{E}\left[ {\boldsymbol{X}}^T\varepsilon \right]}={\boldsymbol{0}}.
 \]</span>
-Let us compute the covariance matrix of <span class="math inline">\({\boldsymbol{X}}_ie_i\)</span>. Since the expectation vector is zero, we have
+Let us compute the covariance matrix of <span class="math inline">\({\boldsymbol{X}}_i\varepsilon_i\)</span>. Since the expectation vector is zero, we have
 <span class="math display">\[
-\mathbb{V}[{\boldsymbol{X}}_ie_i]={\mathbb{E}\left[ {\boldsymbol{X}}_ie_i({\boldsymbol{X}}_ie_i)&#39; \right]}={\mathbb{E}\left[ {\boldsymbol{X}}e({\boldsymbol{X}}e)&#39; \right]}={\mathbb{E}\left[ {\boldsymbol{X}}{\boldsymbol{X}}&#39;e^2 \right]}\stackrel{\text{def}}{=}\mathbb{A}.
+\mathbb{V}[{\boldsymbol{X}}_i^T\varepsilon_i]={\mathbb{E}\left[ \left({\boldsymbol{X}}_i^T\varepsilon_i\right)^T{\boldsymbol{X}}_i^T\varepsilon_i \right]}={\mathbb{E}\left[ \left({\boldsymbol{X}}^T\varepsilon\right)^T{\boldsymbol{X}}^T\varepsilon \right]}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}}\varepsilon^2 \right]}\stackrel{\text{def}}{=}\mathbb{A}.
 \]</span>
-As any function of <span class="math inline">\(\{(Y_i,{\boldsymbol{X}}_i)\}\)</span>’s are independent, <span class="math inline">\(\{{\boldsymbol{X}}_ie_i\}\)</span>’s are independent. By the (multivariate) <strong>Central Limit Theorem</strong>, as <span class="math inline">\(n\to\infty\)</span>
+As any function of <span class="math inline">\(\{(Y_i,{\boldsymbol{X}}_i)\}\)</span>’s are independent, <span class="math inline">\(\{{\boldsymbol{X}}_i\varepsilon_i\}\)</span>’s are independent. By the (multivariate) <strong>Central Limit Theorem</strong>, as <span class="math inline">\(n\to\infty\)</span>
 <span class="math display">\[
-\frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_ie_i
+\frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T\varepsilon_i
 \xrightarrow[d]{\quad\quad}\mathcal{N}({\boldsymbol{0}},\mathbb{A}).
 \]</span>
 There is a small technicality here, we must have <span class="math inline">\(\mathbb{A}&lt;\infty\)</span>. This can be imposed by a stronger regularity condition on the moments, e.g.,
@@ -197,7 +197,7 @@ Under these assumptions, as <span class="math inline">\(n\to\infty\)</span>
 \]</span>
 where
 <span class="math display">\[\mathbb{V}_{{\boldsymbol{\beta}}}\stackrel{\text{def}}{=}\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}\mathbb{A}\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}\]</span>
-and <span class="math inline">\(\mathbb{Q}_{{\boldsymbol{XX}}}={\mathbb{E}\left[ {\boldsymbol{X}}{\boldsymbol{X}}&#39; \right]}\)</span>, <span class="math inline">\(\mathbb{A}={\mathbb{E}\left[ {\boldsymbol{X}}{\boldsymbol{X}}&#39;e^2 \right]}\)</span>.</p>
+and <span class="math inline">\(\mathbb{Q}_{{\boldsymbol{XX}}}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}} \right]}\)</span>, <span class="math inline">\(\mathbb{A}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}}\varepsilon^2 \right]}\)</span>.</p>
 </div>
 <p>The covariance matrix <span class="math inline">\(\mathbb{V}_{{\boldsymbol{\beta}}}\)</span> is called the <strong>asymptotic variance matrix</strong> of <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span>. The matrix is sometimes referred to as the <strong>sandwich</strong> form.</p>
 </div>

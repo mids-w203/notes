@@ -2,21 +2,21 @@
 
 We assume that the best linear predictor, $\mathscr{P}[Y|\v{X}]$, of $Y$ given $\v{X}$ is $\v{X}\v{\beta}$. If we write
 $$
-Y=\v{X}\v{\beta}+e.
+Y=\v{X}\v{\beta}+\eps.
 $$
 we have from Theorem \@ref(thm:blperror)
-$$\E{e}=0,\mbox{ and }\E{\v{X}e}=\v{0}.$$
+$$\E{\eps}=0,\mbox{ and }\E{\v{X}\eps}=\v{0}.$$
 
 We also assume that the dataset $\{(Y_i,\v{X}_i)\}$ are taken **i.i.d.** from the joint distribution of $(Y,\v{X})$. For each $i$, we can write
 $$
-Y_i=\v{X_i}\v{\beta}+e_i.
+Y_i=\v{X_i}\v{\beta}+\eps_i.
 $$
 In matrix notation, we can write
 $$
-\v{Y}=\m{X}\v{\beta}+\v{e}.
+\v{Y}=\m{X}\v{\beta}+\v{\eps}.
 $$
 Then
-$$\E{\v{e}}=\v{0}.$$
+$$\E{\v{\eps}}=\v{0}.$$
 
 ## Consistency of OLS Estimators
 
@@ -27,16 +27,16 @@ $$
 \begin{aligned}
 \widehat{\v{\beta}}
 &=\left[\m{X}^T\m{X}\right]^{-1}\m{X}^T\v{Y} \\
-&=\left[\m{X}^T\m{X}\right]^{-1}\m{X}^T(\m{X}\v{\beta}+\v{e}) \\
+&=\left[\m{X}^T\m{X}\right]^{-1}\m{X}^T(\m{X}\v{\beta}+\v{\eps}) \\
 &=\left[\m{X}^T\m{X}\right]^{-1}(\m{X}^T\m{X})\v{\beta}+
-\left[\m{X}^T\m{X}\right]^{-1}\m{X}^T\v{e} \\
-&=\v{\beta} + \left[\m{X}^T\m{X}\right]^{-1}\m{X}^T\v{e}
+\left[\m{X}^T\m{X}\right]^{-1}\m{X}^T\v{\eps} \\
+&=\v{\beta} + \left[\m{X}^T\m{X}\right]^{-1}\m{X}^T\v{\eps}
 \end{aligned}
 $$
 
 So,
 \begin{equation}
-\widehat{\v{\beta}}-\v{\beta} = \left[\mathbb{X}^T\mathbb{X}\right]^{-1}\mathbb{X}^T\v{e}
+\widehat{\v{\beta}}-\v{\beta} = \left[\mathbb{X}^T\mathbb{X}\right]^{-1}\mathbb{X}^T\v{\eps}
 (\#eq:beta)
 \end{equation}
 
@@ -45,9 +45,9 @@ $$
 \begin{aligned}
 \sqrt{n}\left(\widehat{\v{\beta}}-\v{\beta}\right)
 &=\left( \frac{1}{n}\sum\limits_{i=1}^n\v{X}_i^T\v{X}_i \right)^{-1}
-\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\v{X}_i^Te_i \right) \\
+\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\v{X}_i^T\eps_i \right) \\
 &=\widehat{\mathbb Q}_{\v{XX}}^{-1}
-\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\v{X}_i^Te_i \right)
+\left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\v{X}_i^T\eps_i \right)
 \end{aligned}
 $$
 From the consistency of OLS estimators, we already have 
@@ -56,15 +56,15 @@ Our aim now is to understand the distribution of the stochastic term (the second
 
 We first note (from i.i.d. and Theorem \@ref(thm:blperror)) that 
 $$
-\E{\v{X}_ie_i}=\E{\v{X}e}=\v{0}.
+\E{\v{X}_i^T\eps_i}=\E{\v{X}^T\eps}=\v{0}.
 $$
-Let us compute the covariance matrix of $\v{X}_ie_i$. Since the expectation vector is zero, we have 
+Let us compute the covariance matrix of $\v{X}_i\eps_i$. Since the expectation vector is zero, we have 
 $$
-\mathbb{V}[\v{X}_ie_i]=\E{\v{X}_ie_i(\v{X}_ie_i)'}=\E{\v{X}e(\v{X}e)'}=\E{\v{X}\v{X}'e^2}\stackrel{\text{def}}{=}\mathbb{A}.
+\mathbb{V}[\v{X}_i^T\eps_i]=\E{\left(\v{X}_i^T\eps_i\right)^T\v{X}_i^T\eps_i}=\E{\left(\v{X}^T\eps\right)^T\v{X}^T\eps}=\E{\v{X}^T\v{X}\eps^2}\stackrel{\text{def}}{=}\mathbb{A}.
 $$
-As any function of $\{(Y_i,\v{X}_i)\}$'s are independent,  $\{\v{X}_ie_i\}$'s are independent. By the (multivariate) **Central Limit Theorem**, as $n\to\infty$
+As any function of $\{(Y_i,\v{X}_i)\}$'s are independent,  $\{\v{X}_i\eps_i\}$'s are independent. By the (multivariate) **Central Limit Theorem**, as $n\to\infty$
 $$
-\frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\v{X}_ie_i
+\frac{1}{\sqrt{n}}\sum\limits_{i=1}^n\v{X}_i^T\eps_i
 \xrightarrow[d]{\quad\quad}\mathcal{N}(\v{0},\mathbb{A}).
 $$
 There is a small technicality here, we must have $\mathbb{A}<\infty$. This can be imposed by a stronger regularity condition on the moments, e.g.,
@@ -90,7 +90,7 @@ $$
 $$
 where 
 $$\mathbb{V}_{\v{\beta}}\stackrel{\text{def}}{=}\mathbb{Q}_{\v{XX}}^{-1}\mathbb{A}\mathbb{Q}_{\v{XX}}^{-1}$$
-and $\mathbb{Q}_{\v{XX}}=\E{\v{X}\v{X}'}$, $\mathbb{A}=\E{\v{X}\v{X}'e^2}$.
+and $\mathbb{Q}_{\v{XX}}=\E{\v{X}^T\v{X}}$, $\mathbb{A}=\E{\v{X}^T\v{X}\eps^2}$.
 :::
 The covariance matrix $\mathbb{V}_{\v{\beta}}$ is called the **asymptotic variance matrix** of $\widehat{\v{\beta}}$. The matrix is sometimes referred to as the **sandwich** form.
 
