@@ -113,6 +113,7 @@
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>A</b> Matrix Algebra</a></li>
+<li class="chapter" data-level="B" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>B</b> Matrix Calculus</a></li>
 </ul>
 
       </nav>
@@ -134,7 +135,7 @@
 <h1><span class="header-section-number">Chapter 4</span> Regression</h1>
 <p>We write a <span class="math inline">\(k\)</span>-vector (of scalars) as a row
 <span class="math display">\[
-\v{x}=
+{\boldsymbol{x}}=
 \begin{bmatrix}
 x_1 &amp;
 x_2 &amp;
@@ -142,15 +143,15 @@ x_2 &amp;
 x_k
 \end{bmatrix}.
 \]</span>
-The transpose of <span class="math inline">\(\v{x}\)</span> as
+The transpose of <span class="math inline">\({\boldsymbol{x}}\)</span> as
 <span class="math display">\[
-\v{x}^T=
+{\boldsymbol{x}}^T=
 \begin{bmatrix}
 x_1 \\ x_2\\ \vdots \\ x_k
 \end{bmatrix}.
 \]</span>
-We use uppercase letters <span class="math inline">\(X,Y,Z,\ldots\)</span> to denote random variables. Random vectors are denoted by <strong>bold</strong> uppercase letters <span class="math inline">\(\v{X},\v{Y},\v{Z},\ldots\)</span>, and written as a row vector. For example, <span class="math display">\[
-\v{X}=
+We use uppercase letters <span class="math inline">\(X,Y,Z,\ldots\)</span> to denote random variables. Random vectors are denoted by <strong>bold</strong> uppercase letters <span class="math inline">\({\boldsymbol{X}},{\boldsymbol{Y}},{\boldsymbol{Z}},\ldots\)</span>, and written as a row vector. For example, <span class="math display">\[
+{\boldsymbol{X}}=
 \begin{bmatrix}
 X_{[1]} &amp;
 X_{[2]} &amp;
@@ -158,21 +159,21 @@ X_{[2]} &amp;
 X_{[k]}
 \end{bmatrix}.
 \]</span>
-In order to distinguish random matrices from vectors, a random matrix is denoted by <span class="math inline">\(\m{X}\)</span>.</p>
-<p>The expectation of <span class="math inline">\(\v{X}\)</span> is defined as
+In order to distinguish random matrices from vectors, a random matrix is denoted by <span class="math inline">\({\mathbb{X}}\)</span>.</p>
+<p>The expectation of <span class="math inline">\({\boldsymbol{X}}\)</span> is defined as
 <span class="math display">\[
-\E{\v{X}}=
+{\mathbb{E}\left[ {\boldsymbol{X}} \right]}=
 \begin{bmatrix}
-\E{X_{[1]}} &amp;
-\E{X_{[2]}} &amp;
+{\mathbb{E}\left[ X_{[1]} \right]} &amp;
+{\mathbb{E}\left[ X_{[2]} \right]} &amp;
 \ldots &amp;
-\E{X_{[k]}}
+{\mathbb{E}\left[ X_{[k]} \right]}
 \end{bmatrix}.
 \]</span>
-The <span class="math inline">\(k\times k\)</span> covariance matrix of <span class="math inline">\(\v{X}\)</span> is defined as
+The <span class="math inline">\(k\times k\)</span> covariance matrix of <span class="math inline">\({\boldsymbol{X}}\)</span> is defined as
 <span class="math display">\[
 \begin{aligned}
-\V{\v{X}} &amp;=\E{(\v{X}-\E{\v{X}})^T(\v{X}-\E{\v{X}})} \\
+{\mathbb{V}\left[ {\boldsymbol{X}} \right]} &amp;={\mathbb{E}\left[ ({\boldsymbol{X}}-{\mathbb{E}\left[ {\boldsymbol{X}} \right]})^T({\boldsymbol{X}}-{\mathbb{E}\left[ {\boldsymbol{X}} \right]}) \right]} \\
 &amp;=\begin{bmatrix}
 \sigma_1^2 &amp; \sigma_{12} &amp; \ldots &amp; \sigma_{1k} \\
 \sigma_{21} &amp; \sigma_{2}^2 &amp; \ldots &amp; \sigma_{2k} \\
@@ -181,11 +182,11 @@ The <span class="math inline">\(k\times k\)</span> covariance matrix of <span cl
 \end{bmatrix}_{k\times k}
 \end{aligned}
 \]</span></p>
-<p>where <span class="math inline">\(\sigma_j=\V{X_{[j]}}\)</span> and <span class="math inline">\(\sigma_{ij}=\C{X_{[i]},X_{[j]}}\)</span> for <span class="math inline">\(i,j=1,2,\ldots,k\)</span> and <span class="math inline">\(i\neq j\)</span>.</p>
+<p>where <span class="math inline">\(\sigma_j={\mathbb{V}\left[ X_{[j]} \right]}\)</span> and <span class="math inline">\(\sigma_{ij}={\text{Cov}\left[ X_{[i]},X_{[j]} \right]}\)</span> for <span class="math inline">\(i,j=1,2,\ldots,k\)</span> and <span class="math inline">\(i\neq j\)</span>.</p>
 <div class="theorem">
-<p><span id="thm:explin" class="theorem"><strong>Theorem 4.1  (Linearity of Exectation) </strong></span>Let <span class="math inline">\(\m{A}_{l\times k},\m{B}_{m\times l}\)</span> be fixed matrices and <span class="math inline">\(\v{c}\)</span> a fixed vector of size <span class="math inline">\(l\)</span>. If <span class="math inline">\(\v{X}\)</span> and <span class="math inline">\(\v{Y}\)</span> are random vectors of size <span class="math inline">\(k\)</span> and <span class="math inline">\(m\)</span>, respectively, such that <span class="math inline">\(\E{X}&lt;\infty,\E{Y}&lt;\infty\)</span>, then
+<p><span id="thm:explin" class="theorem"><strong>Theorem 4.1  (Linearity of Exectation) </strong></span>Let <span class="math inline">\({\mathbb{A}}_{l\times k},{\mathbb{B}}_{m\times l}\)</span> be fixed matrices and <span class="math inline">\({\boldsymbol{c}}\)</span> a fixed vector of size <span class="math inline">\(l\)</span>. If <span class="math inline">\({\boldsymbol{X}}\)</span> and <span class="math inline">\({\boldsymbol{Y}}\)</span> are random vectors of size <span class="math inline">\(k\)</span> and <span class="math inline">\(m\)</span>, respectively, such that <span class="math inline">\({\mathbb{E}\left[ X \right]}&lt;\infty,{\mathbb{E}\left[ Y \right]}&lt;\infty\)</span>, then
 <span class="math display">\[
-\E{\m{A}\v{X}+\v{Y}\m{B}+\v{c}}=\m{A}\E{\v{X}}+\E{\v{Y}}\m{B}+\v{c}.
+{\mathbb{E}\left[ {\mathbb{A}}{\boldsymbol{X}}+{\boldsymbol{Y}}{\mathbb{B}}+{\boldsymbol{c}} \right]}={\mathbb{A}}{\mathbb{E}\left[ {\boldsymbol{X}} \right]}+{\mathbb{E}\left[ {\boldsymbol{Y}} \right]}{\mathbb{B}}+{\boldsymbol{c}}.
 \]</span></p>
 </div>
 </div>
