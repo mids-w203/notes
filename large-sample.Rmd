@@ -73,7 +73,8 @@ Putting everything together, we conclude
 $$
 \sqrt{n}(\widehat{\v{\beta}}-\v{\beta})\xrightarrow[d]{\quad\quad}
 \m{Q}_{\v{XX}}^{-1}\mathcal{N}(\v{0},\m{A})
-=\mathcal{N}\left(0,\m{Q}_{\v{XX}}^{-1}\m{A}\m{Q}_{\v{XX}}^{-1}\right)
+=\mathcal{N}\left(\v{0},\left[\m{Q}_{\v{XX}}^{-1}\right]^T\m{A}\m{Q}_{\v{XX}}^{-1}\right)
+=\mathcal{N}\left(\v{0},\m{Q}_{\v{XX}}^{-1}\m{A}\m{Q}_{\v{XX}}^{-1}\right)
 $$
 
 :::{.theorem #asympvar name="Asymptotic Distribution of OLS Estimators"}
