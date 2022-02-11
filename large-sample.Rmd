@@ -7,7 +7,7 @@ $$
 We have from Theorem \@ref(thm:blperror)
 $$\E{\eps}=0,\mbox{ and }\E{\v{X}^T\eps}=\v{0}.$$
 
-We also assume that the dataset $\{(Y_i,\v{X}_i)\}$ are taken **i.i.d.** from the joint distribution of $(Y,\v{X})$. For each $i$, we can write
+We also assume that the dataset $\{(Y_i,\v{X}_i)\}$ is taken **i.i.d.** from the joint distribution of $(Y,\v{X})$. For each $i$, we can write
 $$
 Y_i=\v{X_i}\v{\beta}+\eps_i.
 $$
@@ -16,7 +16,7 @@ $$
 \v{Y}=\m{X}\v{\beta}+\v{\eps}.
 $$
 Then
-$$\E{\v{\eps}}=\v{0}.$$
+$$\E{\v{\eps}}=\v{0},\text{ and } \E{\v{\eps}}=\v{0}$$
 
 ## Consistency of OLS Estimators
 
@@ -60,7 +60,7 @@ $$
 $$
 Let us compute the covariance matrix of $\v{X}_i\eps_i$. Since the expectation vector is zero, we have 
 $$
-\m{V}[\v{X}_i^T\eps_i]=\E{\left(\v{X}_i^T\eps_i\right)^T\v{X}_i^T\eps_i}=\E{\left(\v{X}^T\eps\right)^T\v{X}^T\eps}=\E{\v{X}^T\v{X}\eps^2}\stackrel{\text{def}}{=}\m{A}.
+\m{V}[\v{X}_i^T\eps_i]=\E{\left(\v{X}_i^T\eps_i\right)^T\v{X}_i^T\eps_i}=\E{\left(\v{X}^T\eps\right)^T\v{X}^T\eps}=\E{\v{X}\v{X}^T\eps^2}\stackrel{\text{def}}{=}\m{A}.
 $$
 As any function of $\{(Y_i,\v{X}_i)\}$'s are independent,  $\{\v{X}_i\eps_i\}$'s are independent. By the (multivariate) **Central Limit Theorem**, as $n\to\infty$
 $$
@@ -90,7 +90,7 @@ $$
 $$
 where 
 $$\m{V}_{\v{\beta}}\stackrel{\text{def}}{=}\m{Q}_{\v{XX}}^{-1}\m{A}\m{Q}_{\v{XX}}^{-1}$$
-and $\m{Q}_{\v{XX}}=\E{\v{X}^T\v{X}}$, $\m{A}=\E{\v{X}^T\v{X}\eps^2}$.
+and $\m{Q}_{\v{XX}}=\E{\v{X}^T\v{X}}$, $\m{A}=\E{\v{X}\v{X}^T\eps^2}$.
 :::
 The covariance matrix $\m{V}_{\v{\beta}}$ is called the **asymptotic variance matrix** of $\widehat{\v{\beta}}$. The matrix is sometimes referred to as the **sandwich** form.
 

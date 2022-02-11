@@ -168,7 +168,7 @@ Our aim now is to understand the distribution of the stochastic term (the second
 \]</span>
 Let us compute the covariance matrix of <span class="math inline">\({\boldsymbol{X}}_i\varepsilon_i\)</span>. Since the expectation vector is zero, we have
 <span class="math display">\[
-{\mathbb{V}}[{\boldsymbol{X}}_i^T\varepsilon_i]={\mathbb{E}\left[ \left({\boldsymbol{X}}_i^T\varepsilon_i\right)^T{\boldsymbol{X}}_i^T\varepsilon_i \right]}={\mathbb{E}\left[ \left({\boldsymbol{X}}^T\varepsilon\right)^T{\boldsymbol{X}}^T\varepsilon \right]}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}}\varepsilon^2 \right]}\stackrel{\text{def}}{=}{\mathbb{A}}.
+{\mathbb{V}}[{\boldsymbol{X}}_i^T\varepsilon_i]={\mathbb{E}\left[ \left({\boldsymbol{X}}_i^T\varepsilon_i\right)^T{\boldsymbol{X}}_i^T\varepsilon_i \right]}={\mathbb{E}\left[ \left({\boldsymbol{X}}^T\varepsilon\right)^T{\boldsymbol{X}}^T\varepsilon \right]}={\mathbb{E}\left[ {\boldsymbol{X}}{\boldsymbol{X}}^T\varepsilon^2 \right]}\stackrel{\text{def}}{=}{\mathbb{A}}.
 \]</span>
 As any function of <span class="math inline">\(\{(Y_i,{\boldsymbol{X}}_i)\}\)</span>’s are independent, <span class="math inline">\(\{{\boldsymbol{X}}_i\varepsilon_i\}\)</span>’s are independent. By the (multivariate) <strong>Central Limit Theorem</strong>, as <span class="math inline">\(n\to\infty\)</span>
 <span class="math display">\[
@@ -197,7 +197,7 @@ Under these assumptions, as <span class="math inline">\(n\to\infty\)</span>
 \]</span>
 where
 <span class="math display">\[{\mathbb{V}}_{{\boldsymbol{\beta}}}\stackrel{\text{def}}{=}{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}{\mathbb{A}}{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}\]</span>
-and <span class="math inline">\({\mathbb{Q}}_{{\boldsymbol{XX}}}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}} \right]}\)</span>, <span class="math inline">\({\mathbb{A}}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}}\varepsilon^2 \right]}\)</span>.</p>
+and <span class="math inline">\({\mathbb{Q}}_{{\boldsymbol{XX}}}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}} \right]}\)</span>, <span class="math inline">\({\mathbb{A}}={\mathbb{E}\left[ {\boldsymbol{X}}{\boldsymbol{X}}^T\varepsilon^2 \right]}\)</span>.</p>
 </div>
 <p>The covariance matrix <span class="math inline">\({\mathbb{V}}_{{\boldsymbol{\beta}}}\)</span> is called the <strong>asymptotic variance matrix</strong> of <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span>. The matrix is sometimes referred to as the <strong>sandwich</strong> form.</p>
 </div>
