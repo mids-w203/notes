@@ -113,7 +113,6 @@
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>A</b> Matrix Algebra</a></li>
-<li class="chapter" data-level="B" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>B</b> Matrix Calculus</a></li>
 </ul>
 
       </nav>
@@ -133,27 +132,27 @@
             <section class="normal" id="section-">
 <div id="best-linear-predictor" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Best Linear Predictor</h2>
-<p>Let <span class="math inline">\(Y\)</span> be a random variable and <span class="math inline">\({\boldsymbol{X}}\)</span> be a random vector of <span class="math inline">\(k\)</span> variables. We denote the <strong>best linear predictor</strong> of <span class="math inline">\(Y\)</span> given <span class="math inline">\({\boldsymbol{X}}\)</span> by <span class="math inline">\(\mathscr{P}[Y|{\boldsymbol{X}}]\)</span>. It’s also called the <strong>linear projection</strong> of <span class="math inline">\(Y\)</span> on <span class="math inline">\({\boldsymbol{X}}\)</span>.</p>
+<p>Let <span class="math inline">\(Y\)</span> be a random variable and <span class="math inline">\(\v{X}\)</span> be a random vector of <span class="math inline">\(k\)</span> variables. We denote the <strong>best linear predictor</strong> of <span class="math inline">\(Y\)</span> given <span class="math inline">\(\v{X}\)</span> by <span class="math inline">\(\mathscr{P}[Y|\v{X}]\)</span>. It’s also called the <strong>linear projection</strong> of <span class="math inline">\(Y\)</span> on <span class="math inline">\(\v{X}\)</span>.</p>
 <div class="theorem">
 <p><span id="thm:blp" class="theorem"><strong>Theorem 4.3  (Best Linear Predictor) </strong></span>Under the following assumptions</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\({\mathbb{E}\left[ Y^2 \right]}&lt;\infty\)</span></li>
-<li><span class="math inline">\({\mathbb{E}\left[ ||\bf{X}||^2 \right]}&lt;\infty\)</span></li>
-<li><span class="math inline">\({\mathbb{Q}}_{\bf{XX}}\stackrel{\text{def}}{=}{\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}} \right]}\)</span> is positive-definite</li>
+<li><span class="math inline">\(\E{Y^2}&lt;\infty\)</span></li>
+<li><span class="math inline">\(\E{||\bf{X}||^2}&lt;\infty\)</span></li>
+<li><span class="math inline">\(\m{Q}_{\bf{XX}}\stackrel{\text{def}}{=}\E{\v{X}^T\v{X}}\)</span> is positive-definite</li>
 </ol>
 <p>the best linear predictor exists uniquely, and has the form
 <span class="math display">\[
-\mathscr{P}[Y|{\boldsymbol{X}}]={\boldsymbol{X}}{\boldsymbol{\beta}},
+\mathscr{P}[Y|\v{X}]=\v{X}\v{\beta},
 \]</span>
-where <span class="math inline">\({\boldsymbol{\beta}}=\left({\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}} \right]}\right)^{-1}{\mathbb{E}}[{\boldsymbol{X}}^TY]\)</span> is a column vector.</p>
+where <span class="math inline">\(\v{\beta}=\left(\E{\v{X}^T\v{X}}\right)^{-1}\m{E}[\v{X}^TY]\)</span> is a column vector.</p>
 </div>
 <p>In the following theorem, we show that the BLP error is <em>uncorrelated</em> to the explanatory variables.</p>
 <div class="theorem">
-<p><span id="thm:blperror" class="theorem"><strong>Theorem 4.4  (Best Linear Predictor Error) </strong></span>If the BLP exists, the linear projection error <span class="math inline">\(e=Y-\mathscr{P}[Y|{\boldsymbol{X}}]\)</span> follows the following properties:</p>
+<p><span id="thm:blperror" class="theorem"><strong>Theorem 4.4  (Best Linear Predictor Error) </strong></span>If the BLP exists, the linear projection error <span class="math inline">\(e=Y-\mathscr{P}[Y|\v{X}]\)</span> follows the following properties:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\({\mathbb{E}}[{\boldsymbol{X}}e]={\boldsymbol{0}}\)</span></li>
-<li>moreover, <span class="math inline">\({\mathbb{E}}[e]=0\)</span> if
-<span class="math inline">\({\boldsymbol{X}}=\begin{bmatrix}1 &amp; X_{[1]} &amp; \ldots &amp; X_{[k]} \end{bmatrix}\)</span> contains a constant.</li>
+<li><span class="math inline">\(\m{E}[\v{X}\epsilon]=\v{0}\)</span></li>
+<li>moreover, <span class="math inline">\(\m{E}[\epsilon]=0\)</span> if
+<span class="math inline">\(\v{X}=\begin{bmatrix}1 &amp; X_{[1]} &amp; \ldots &amp; X_{[k]} \end{bmatrix}\)</span> contains a constant.</li>
 </ol>
 </div>
 

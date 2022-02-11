@@ -89,7 +89,7 @@ In the following theorem, we show that the BLP error is *uncorrelated* to the ex
 ::: {.theorem  #blperror name="Best Linear Predictor Error"}
 If the BLP exists, the linear projection error $e=Y-\mathscr{P}[Y|\v{X}]$ follows the following properties:
 
-1. $\m{E}[\v{X}e]=\v{0}$
-2. moreover, $\m{E}[e]=0$ if 
+1. $\m{E}[\v{X}\epsilon]=\v{0}$
+2. moreover, $\m{E}[\epsilon]=0$ if 
 $\v{X}=\begin{bmatrix}1 & X_{[1]} & \ldots & X_{[k]} \end{bmatrix}$ contains a constant.
 :::
