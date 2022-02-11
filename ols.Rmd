@@ -143,36 +143,33 @@ i=1,2,\ldots,n.
 $$
 For the least squares estimators, we define the **errors** and **residuals** in the following way:
 $$
-e_i=Y_i-\v{X}_i\v{\beta}, \mbox{ and } 
-\widehat{e}_i=Y_i-\widehat{Y}_i.
+\eps_i=Y_i-\v{X}_i\v{\beta}, \mbox{ and } 
+e_i=Y_i-\widehat{Y}_i.
 $$
 
 :::{.theorem #olserror name="Least Squares Error"}
 If \ $\widehat{\mathbb{Q}}_{\v{XX}}$ is non-singular, then  
-1. $\sum\limits_{i=1}^n\v{X}_i\widehat{e}_i=\v{0}$  
-2. $\sum\limits_{i=1}^n\widehat{e}_i=0$
+1. $\sum\limits_{i=1}^n\v{X}_i^Te_i=\v{0}$  
+2. $\sum\limits_{i=1}^ne_i=0$
 :::
 
 :::{.proof}
-\begin{align}
-\sum\limits_{i=1}^n\v{X}_i\widehat{e}_i 
-&=\sum\limits_{i=1}^n\v{X}_i(Y_i-\widehat{Y}_i) \\
-&=\sum\limits_{i=1}^n\v{X}_iY_i-\sum\limits_{i=1}^n\v{X}_i\widehat{Y}_i \\
-&=\sum\limits_{i=1}^n\v{X}_iY_i-\sum\limits_{i=1}^n\v{X}_i\v{X}_i^T\v{\widehat{\beta}} \\
-&=\widehat{Q}_{\v{X}Y}-\widehat{Q}_{\v{XX}}\v{\widehat{\beta}} \\
-&=\widehat{Q}_{\v{X}Y}-\widehat{Q}_{\v{XX}}
-\left( \widehat{Q}_{\v{XX}}^{-1} \widehat{Q}_{\v{X}Y} \right) \\
+$$
+\begin{aligned}
+\sum\limits_{i=1}^n\v{X}_i^Te_i 
+&=\sum\limits_{i=1}^n\v{X}_i^T(Y_i-\widehat{Y}_i) \\
+&=\sum\limits_{i=1}^n\v{X}_i^TY_i-\sum\limits_{i=1}^n\v{X}_i^T\widehat{Y}_i \\
+&=\sum\limits_{i=1}^n\v{X}_i^TY_i-\sum\limits_{i=1}^n\v{X}_i^T\v{X}_i\v{\widehat{\beta}} \\
+&=\widehat{\m{Q}}_{\v{X}Y}-\widehat{\m{Q}}_{\v{XX}}\v{\widehat{\beta}} \\
+&=\widehat{\m{Q}}_{\v{X}Y}-\widehat{\m{Q}}_{\v{XX}}
+\left( \widehat{\m{Q}}_{\v{XX}}^{-1} \widehat{\m{Q}}_{\v{X}Y} \right) \\
 &=\v{0}
-\end{align}
-
+\end{aligned}
+$$
 From the first row of (1) we get
 
 $$
-\sum\limits_{i=1}^n X_{i1}\widehat{e}_i=0.
-$$
-Since $X_{i1}=1$ for all $i$, we have that
-$$
-\sum\limits_{i=1}^n\widehat{e}_i=0.
+\sum\limits_{i=1}^n e_i=0.
 $$
 Hence the result.
 :::
@@ -182,10 +179,10 @@ Hence the result.
 Taking the definition of errors from the last section, we can write down a system of $n$ linear equations:
 $$
 \begin{aligned}
-Y_1 &= \v{X_1}\v{\beta} + e_1 \\
-Y_2 &= \v{X_2}\v{\beta} + e_2 \\
+Y_1 &= \v{X_1}\v{\beta} + \eps_1 \\
+Y_2 &= \v{X_2}\v{\beta} + \eps_2 \\
 & \vdots \\
-Y_n &= \v{X_1}\v{\beta} + e_n
+Y_n &= \v{X_1}\v{\beta} + \eps_n
 \end{aligned}
 $$
 
@@ -203,16 +200,16 @@ Y_n
 \vdots & \vdots & \vdots & \ddots & \vdots \\
 1 & X_{[1]n} & X_{[k]n} & \ldots & X_{[k]n}
 \end{bmatrix},\mbox{ and }
-\v{e}=\begin{bmatrix}
-e_1 \\
-e_2 \\
+\v{\eps}=\begin{bmatrix}
+\eps_1 \\
+\eps_2 \\
 \vdots \\
-e_n
+\eps_n
 \end{bmatrix}_{n\times1}.
 $$
 We can now rewrite the system as the following:
 $$
-\v{Y}=\m{X}\v{\beta}+\v{e}.
+\v{Y}=\m{X}\v{\beta}+\v{\eps}.
 $$
 We also note that
 $$
@@ -230,9 +227,9 @@ $$
 $$
 Similarly, the residual vector is
 $$
-\widehat{\v{e}}=\v{Y}-\m{X}\widehat{\v{\beta}}.
+\v{e}=\v{Y}-\m{X}\widehat{\v{\beta}}.
 $$
-As a consequence, we can write
+As a consequence of \@ref(thm:olserror), we can write
 $$
-\m{X}^T\widehat{\v{e}}=\v{0}.
+\m{X}^T\v{e}=\v{0}.
 $$

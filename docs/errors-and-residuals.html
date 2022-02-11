@@ -140,32 +140,30 @@ i=1,2,\ldots,n.
 \]</span>
 For the least squares estimators, we define the <strong>errors</strong> and <strong>residuals</strong> in the following way:
 <span class="math display">\[
-e_i=Y_i-{\boldsymbol{X}}_i{\boldsymbol{\beta}}, \mbox{ and }
-\widehat{e}_i=Y_i-\widehat{Y}_i.
+\varepsilon_i=Y_i-{\boldsymbol{X}}_i{\boldsymbol{\beta}}, \mbox{ and }
+e_i=Y_i-\widehat{Y}_i.
 \]</span></p>
 <div class="theorem">
 <p><span id="thm:olserror" class="theorem"><strong>Theorem 5.2  (Least Squares Error) </strong></span>If  <span class="math inline">\(\widehat{\mathbb{Q}}_{{\boldsymbol{XX}}}\)</span> is non-singular, then<br />
-1. <span class="math inline">\(\sum\limits_{i=1}^n{\boldsymbol{X}}_i\widehat{e}_i={\boldsymbol{0}}\)</span><br />
-2. <span class="math inline">\(\sum\limits_{i=1}^n\widehat{e}_i=0\)</span></p>
+1. <span class="math inline">\(\sum\limits_{i=1}^n{\boldsymbol{X}}_i^Te_i={\boldsymbol{0}}\)</span><br />
+2. <span class="math inline">\(\sum\limits_{i=1}^ne_i=0\)</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-3" class="proof"><em>Proof</em>. </span><span class="math display">\[\begin{align}
-\sum\limits_{i=1}^n{\boldsymbol{X}}_i\widehat{e}_i
-&amp;=\sum\limits_{i=1}^n{\boldsymbol{X}}_i(Y_i-\widehat{Y}_i) \\
-&amp;=\sum\limits_{i=1}^n{\boldsymbol{X}}_iY_i-\sum\limits_{i=1}^n{\boldsymbol{X}}_i\widehat{Y}_i \\
-&amp;=\sum\limits_{i=1}^n{\boldsymbol{X}}_iY_i-\sum\limits_{i=1}^n{\boldsymbol{X}}_i{\boldsymbol{X}}_i^T{\boldsymbol{\widehat{\beta}}} \\
-&amp;=\widehat{Q}_{{\boldsymbol{X}}Y}-\widehat{Q}_{{\boldsymbol{XX}}}{\boldsymbol{\widehat{\beta}}} \\
-&amp;=\widehat{Q}_{{\boldsymbol{X}}Y}-\widehat{Q}_{{\boldsymbol{XX}}}
-\left( \widehat{Q}_{{\boldsymbol{XX}}}^{-1} \widehat{Q}_{{\boldsymbol{X}}Y} \right) \\
+<p><span id="unlabeled-div-3" class="proof"><em>Proof</em>. </span><span class="math display">\[
+\begin{aligned}
+\sum\limits_{i=1}^n{\boldsymbol{X}}_i^Te_i
+&amp;=\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T(Y_i-\widehat{Y}_i) \\
+&amp;=\sum\limits_{i=1}^n{\boldsymbol{X}}_i^TY_i-\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T\widehat{Y}_i \\
+&amp;=\sum\limits_{i=1}^n{\boldsymbol{X}}_i^TY_i-\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T{\boldsymbol{X}}_i{\boldsymbol{\widehat{\beta}}} \\
+&amp;=\widehat{{\mathbb{Q}}}_{{\boldsymbol{X}}Y}-\widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}{\boldsymbol{\widehat{\beta}}} \\
+&amp;=\widehat{{\mathbb{Q}}}_{{\boldsymbol{X}}Y}-\widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}
+\left( \widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}^{-1} \widehat{{\mathbb{Q}}}_{{\boldsymbol{X}}Y} \right) \\
 &amp;={\boldsymbol{0}}
-\end{align}\]</span></p>
-<p>From the first row of (1) we get</p>
-<p><span class="math display">\[
-\sum\limits_{i=1}^n X_{i1}\widehat{e}_i=0.
+\end{aligned}
 \]</span>
-Since <span class="math inline">\(X_{i1}=1\)</span> for all <span class="math inline">\(i\)</span>, we have that
-<span class="math display">\[
-\sum\limits_{i=1}^n\widehat{e}_i=0.
+From the first row of (1) we get</p>
+<p><span class="math display">\[
+\sum\limits_{i=1}^n e_i=0.
 \]</span>
 Hence the result.</p>
 </div>

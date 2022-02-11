@@ -20,6 +20,7 @@ site: bookdown::bookdown_site
 \newcommand{\v}[1]{{\boldsymbol{#1}}}
 \newcommand{\m}[1]{{\mathbb{#1}}}
 \newcommand{\p}[1]{{\mathbb{P}\left(#1\right)}}
+\newcommand{\eps}[]{\varepsilon}
 
 
 # Cover {-}

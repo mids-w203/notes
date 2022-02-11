@@ -136,10 +136,10 @@
 <p>Taking the definition of errors from the last section, we can write down a system of <span class="math inline">\(n\)</span> linear equations:
 <span class="math display">\[
 \begin{aligned}
-Y_1 &amp;= {\boldsymbol{X_1}}{\boldsymbol{\beta}} + e_1 \\
-Y_2 &amp;= {\boldsymbol{X_2}}{\boldsymbol{\beta}} + e_2 \\
+Y_1 &amp;= {\boldsymbol{X_1}}{\boldsymbol{\beta}} + \varepsilon_1 \\
+Y_2 &amp;= {\boldsymbol{X_2}}{\boldsymbol{\beta}} + \varepsilon_2 \\
 &amp; \vdots \\
-Y_n &amp;= {\boldsymbol{X_1}}{\boldsymbol{\beta}} + e_n
+Y_n &amp;= {\boldsymbol{X_1}}{\boldsymbol{\beta}} + \varepsilon_n
 \end{aligned}
 \]</span></p>
 <p>Define
@@ -156,16 +156,16 @@ Y_n
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 1 &amp; X_{[1]n} &amp; X_{[k]n} &amp; \ldots &amp; X_{[k]n}
 \end{bmatrix},\mbox{ and }
-{\boldsymbol{e}}=\begin{bmatrix}
-e_1 \\
-e_2 \\
+{\boldsymbol{\varepsilon}}=\begin{bmatrix}
+\varepsilon_1 \\
+\varepsilon_2 \\
 \vdots \\
-e_n
+\varepsilon_n
 \end{bmatrix}_{n\times1}.
 \]</span>
 We can now rewrite the system as the following:
 <span class="math display">\[
-{\boldsymbol{Y}}={\mathbb{X}}{\boldsymbol{\beta}}+{\boldsymbol{e}}.
+{\boldsymbol{Y}}={\mathbb{X}}{\boldsymbol{\beta}}+{\boldsymbol{\varepsilon}}.
 \]</span>
 We also note that
 <span class="math display">\[
@@ -183,11 +183,11 @@ So, we have write the least squares estimator as
 \]</span>
 Similarly, the residual vector is
 <span class="math display">\[
-\widehat{{\boldsymbol{e}}}={\boldsymbol{Y}}-{\mathbb{X}}\widehat{{\boldsymbol{\beta}}}.
+{\boldsymbol{e}}={\boldsymbol{Y}}-{\mathbb{X}}\widehat{{\boldsymbol{\beta}}}.
 \]</span>
-As a consequence, we can write
+As a consequence of <a href="errors-and-residuals.html#thm:olserror">5.2</a>, we can write
 <span class="math display">\[
-{\mathbb{X}}^T\widehat{{\boldsymbol{e}}}={\boldsymbol{0}}.
+{\mathbb{X}}^T{\boldsymbol{e}}={\boldsymbol{0}}.
 \]</span></p>
 
 </div>
