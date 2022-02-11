@@ -1,11 +1,11 @@
 # Large-Sample Regression
 
-We assume that the best linear predictor, $\mathscr{P}[Y|\v{X}]$, of $Y$ given $\v{X}$ is $\v{X}\v{\beta}$. If we write
+We assume that the best linear predictor, $\mathscr{P}[Y|\v{X}]$, of $Y$ given $\v{X}$ is $\v{X}\v{\beta}$.
 $$
 Y=\v{X}\v{\beta}+\eps.
 $$
-we have from Theorem \@ref(thm:blperror)
-$$\E{\eps}=0,\mbox{ and }\E{\v{X}\eps}=\v{0}.$$
+We have from Theorem \@ref(thm:blperror)
+$$\E{\eps}=0,\mbox{ and }\E{\v{X}^T\eps}=\v{0}.$$
 
 We also assume that the dataset $\{(Y_i,\v{X}_i)\}$ are taken **i.i.d.** from the joint distribution of $(Y,\v{X})$. For each $i$, we can write
 $$
