@@ -60,7 +60,7 @@ $$
 $$
 Let us compute the covariance matrix of $\v{X}_i\eps_i$. Since the expectation vector is zero, we have 
 $$
-\m{V}[\v{X}_i^T\eps_i]=\E{\left(\v{X}_i^T\eps_i\right)^T\v{X}_i^T\eps_i}=\E{\left(\v{X}^T\eps\right)^T\v{X}^T\eps}=\E{\v{X}\v{X}^T\eps^2}\stackrel{\text{def}}{=}\m{A}.
+\m{V}[\v{X}_i^T\eps_i]=\E{\v{X}_i^T\eps_i\left(\v{X}_i^T\eps_i\right)^T}=\E{\v{X}^T\v{X}\eps^2}\stackrel{\text{def}}{=}\m{A}.
 $$
 As any function of $\{(Y_i,\v{X}_i)\}$'s are independent,  $\{\v{X}_i\eps_i\}$'s are independent. By the (multivariate) **Central Limit Theorem**, as $n\to\infty$
 $$
@@ -91,7 +91,7 @@ $$
 $$
 where 
 $$\m{V}_{\v{\beta}}\stackrel{\text{def}}{=}\m{Q}_{\v{XX}}^{-1}\m{A}\m{Q}_{\v{XX}}^{-1}$$
-and $\m{Q}_{\v{XX}}=\E{\v{X}^T\v{X}}$, $\m{A}=\E{\v{X}\v{X}^T\eps^2}$.
+and $\m{Q}_{\v{XX}}=\E{\v{X}^T\v{X}}$, $\m{A}=\E{\v{X}^T\v{X}\eps^2}$.
 :::
 The covariance matrix $\m{V}_{\v{\beta}}$ is called the **asymptotic variance matrix** of $\widehat{\v{\beta}}$. The matrix is sometimes referred to as the **sandwich** form.
 
@@ -115,7 +115,7 @@ for $\m{A}$.
 
 As a result, we get the following plug-in estimator for $\m{V}_{\v{\beta}}$:
 $$
-\widehat{\m{V}}_{\v{\beta}}^{\text{HC0}}=
+\widehat{\m{V}}_{\v{\beta}}=
 \widehat{\m{Q}}_{\v{XX}}^{-1}\widehat{\m{A}}\widehat{\m{Q}}_{\v{XX}}^{-1}
 $$
 The estimator is also consistent. For a proof, see Hensen 2013.
@@ -123,7 +123,7 @@ The estimator is also consistent. For a proof, see Hensen 2013.
 As a consequence, we can get the following estimator for the variance, $\m{V}_{\widehat{\v{\beta}}}$, of $\widehat{\v{\beta}}$ in the heteroskedastic case.
 $$
 \begin{aligned}
-\widehat{\m{V}}^{\text{HC0}}_{\widehat{\v{\beta}}}
+\widehat{\m{V}}\left[\widehat{\v{\beta}}\right]
 &=\frac{1}{n}\widehat{\m{V}}_{\v{\beta}}^{\text{HC0}} \\
 &=\frac{1}{n}\widehat{\m{Q}}_{\v{XX}}^{-1}\widehat{\m{A}}\widehat{\m{Q}}_{\v{XX}}^{-1} \\
 &=\frac{1}{n}\left(\frac{1}{n}\sum\limits_{i=1}^n\v{X}_i^T\v{X}_i\right)^{-1}
@@ -135,6 +135,6 @@ $$
 \end{aligned}
 $$
 where $\m{D}$ is an $n\times n$ diagonal matrix with diagonal entries $e_1^2,e_2^2,\ldots,e_n^2$.
-The estimator $\widehat{\m{V}}^{\text{HC0}}_{\widehat{\v{\beta}}}$ is referred to as the **robust error variance estimator** for the OLS coefficients $\widehat{\v{\beta}}$.
+The estimator, $\widehat{\m{V}}\left[\widehat{\v{\beta}}\right]$, is referred to as the **robust error variance estimator** for the OLS coefficients $\widehat{\v{\beta}}$.
 
 ### Homeskedastic Variance

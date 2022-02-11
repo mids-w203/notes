@@ -149,14 +149,14 @@ where <span class="math inline">\(e_i=(Y_i-{\boldsymbol{X}}_i\widehat{{\boldsymb
 for <span class="math inline">\({\mathbb{A}}\)</span>.</p>
 <p>As a result, we get the following plug-in estimator for <span class="math inline">\({\mathbb{V}}_{{\boldsymbol{\beta}}}\)</span>:
 <span class="math display">\[
-\widehat{{\mathbb{V}}}_{{\boldsymbol{\beta}}}^{\text{HC0}}=
+\widehat{{\mathbb{V}}}_{{\boldsymbol{\beta}}}=
 \widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}^{-1}\widehat{{\mathbb{A}}}\widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}^{-1}
 \]</span>
 The estimator is also consistent. For a proof, see Hensen 2013.</p>
 <p>As a consequence, we can get the following estimator for the variance, <span class="math inline">\({\mathbb{V}}_{\widehat{{\boldsymbol{\beta}}}}\)</span>, of <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span> in the heteroskedastic case.
 <span class="math display">\[
 \begin{aligned}
-\widehat{{\mathbb{V}}}^{\text{HC0}}_{\widehat{{\boldsymbol{\beta}}}}
+\widehat{{\mathbb{V}}}\left[\widehat{{\boldsymbol{\beta}}}\right]
 &amp;=\frac{1}{n}\widehat{{\mathbb{V}}}_{{\boldsymbol{\beta}}}^{\text{HC0}} \\
 &amp;=\frac{1}{n}\widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}^{-1}\widehat{{\mathbb{A}}}\widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}^{-1} \\
 &amp;=\frac{1}{n}\left(\frac{1}{n}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T{\boldsymbol{X}}_i\right)^{-1}
@@ -168,7 +168,7 @@ The estimator is also consistent. For a proof, see Hensen 2013.</p>
 \end{aligned}
 \]</span>
 where <span class="math inline">\({\mathbb{D}}\)</span> is an <span class="math inline">\(n\times n\)</span> diagonal matrix with diagonal entries <span class="math inline">\(e_1^2,e_2^2,\ldots,e_n^2\)</span>.
-The estimator <span class="math inline">\(\widehat{{\mathbb{V}}}^{\text{HC0}}_{\widehat{{\boldsymbol{\beta}}}}\)</span> is referred to as the <strong>robust error variance estimator</strong> for the OLS coefficients <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span>.</p>
+The estimator, <span class="math inline">\(\widehat{{\mathbb{V}}}\left[\widehat{{\boldsymbol{\beta}}}\right]\)</span>, is referred to as the <strong>robust error variance estimator</strong> for the OLS coefficients <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span>.</p>
 </div>
 <div id="homeskedastic-variance" class="section level3" number="7.3.2">
 <h3><span class="header-section-number">7.3.2</span> Homeskedastic Variance</h3>
