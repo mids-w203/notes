@@ -182,7 +182,7 @@ $$
 Y_1 &= \v{X_1}\v{\beta} + \eps_1 \\
 Y_2 &= \v{X_2}\v{\beta} + \eps_2 \\
 & \vdots \\
-Y_n &= \v{X_1}\v{\beta} + \eps_n
+Y_n &= \v{X_n}\v{\beta} + \eps_n
 \end{aligned}
 $$
 
@@ -198,7 +198,7 @@ Y_n
 1 & X_{[1]1} & X_{[2]1} & \ldots & X_{[k]1} \\
 1 & X_{[1]2} & X_{[2]2} & \ldots & X_{[k]2} \\
 \vdots & \vdots & \vdots & \ddots & \vdots \\
-1 & X_{[1]n} & X_{[k]n} & \ldots & X_{[k]n}
+1 & X_{[1]n} & X_{[2]n} & \ldots & X_{[k]n}
 \end{bmatrix},\mbox{ and }
 \v{\eps}=\begin{bmatrix}
 \eps_1 \\
