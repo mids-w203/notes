@@ -146,7 +146,7 @@
 \]</span></p>
 <p>So,
 <span class="math display" id="eq:beta">\[\begin{equation}
-\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}} = \left[\mathbb{X}^T\mathbb{X}\right]^{-1}\mathbb{X}^T{\boldsymbol{\varepsilon}}
+\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}} = \left[{\mathbb{X}}^T{\mathbb{X}}\right]^{-1}{\mathbb{X}}^T{\boldsymbol{\varepsilon}}
 \tag{7.1}
 \end{equation}\]</span></p>
 <p>We can then multiply by <span class="math inline">\(\sqrt{n}\)</span> both sides of Equation <a href="asymptotic-normality.html#eq:beta">(7.1)</a> to get
@@ -155,12 +155,12 @@
 \sqrt{n}\left(\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}}\right)
 &amp;=\left( \frac{1}{n}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T{\boldsymbol{X}}_i \right)^{-1}
 \left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T\varepsilon_i \right) \\
-&amp;=\widehat{\mathbb Q}_{{\boldsymbol{XX}}}^{-1}
+&amp;=\widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}^{-1}
 \left( \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T\varepsilon_i \right)
 \end{aligned}
 \]</span>
 From the consistency of OLS estimators, we already have
-<span class="math display">\[ \widehat{\mathbb Q}_{{\boldsymbol{XX}}}\xrightarrow[p]{\quad\quad}\mathbb{Q}_{{\boldsymbol{XX}}}\]</span>
+<span class="math display">\[ \widehat{{\mathbb{Q}}}_{{\boldsymbol{XX}}}\xrightarrow[p]{\quad\quad}{\mathbb{Q}}_{{\boldsymbol{XX}}}\]</span>
 Our aim now is to understand the distribution of the stochastic term (the second term) in the above expression.</p>
 <p>We first note (from i.i.d. and Theorem <a href="best-linear-predictor.html#thm:blperror">4.4</a>) that
 <span class="math display">\[
@@ -168,20 +168,20 @@ Our aim now is to understand the distribution of the stochastic term (the second
 \]</span>
 Let us compute the covariance matrix of <span class="math inline">\({\boldsymbol{X}}_i\varepsilon_i\)</span>. Since the expectation vector is zero, we have
 <span class="math display">\[
-\mathbb{V}[{\boldsymbol{X}}_i^T\varepsilon_i]={\mathbb{E}\left[ \left({\boldsymbol{X}}_i^T\varepsilon_i\right)^T{\boldsymbol{X}}_i^T\varepsilon_i \right]}={\mathbb{E}\left[ \left({\boldsymbol{X}}^T\varepsilon\right)^T{\boldsymbol{X}}^T\varepsilon \right]}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}}\varepsilon^2 \right]}\stackrel{\text{def}}{=}\mathbb{A}.
+{\mathbb{V}}[{\boldsymbol{X}}_i^T\varepsilon_i]={\mathbb{E}\left[ \left({\boldsymbol{X}}_i^T\varepsilon_i\right)^T{\boldsymbol{X}}_i^T\varepsilon_i \right]}={\mathbb{E}\left[ \left({\boldsymbol{X}}^T\varepsilon\right)^T{\boldsymbol{X}}^T\varepsilon \right]}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}}\varepsilon^2 \right]}\stackrel{\text{def}}{=}{\mathbb{A}}.
 \]</span>
 As any function of <span class="math inline">\(\{(Y_i,{\boldsymbol{X}}_i)\}\)</span>’s are independent, <span class="math inline">\(\{{\boldsymbol{X}}_i\varepsilon_i\}\)</span>’s are independent. By the (multivariate) <strong>Central Limit Theorem</strong>, as <span class="math inline">\(n\to\infty\)</span>
 <span class="math display">\[
 \frac{1}{\sqrt{n}}\sum\limits_{i=1}^n{\boldsymbol{X}}_i^T\varepsilon_i
-\xrightarrow[d]{\quad\quad}\mathcal{N}({\boldsymbol{0}},\mathbb{A}).
+\xrightarrow[d]{\quad\quad}\mathcal{N}({\boldsymbol{0}},{\mathbb{A}}).
 \]</span>
-There is a small technicality here, we must have <span class="math inline">\(\mathbb{A}&lt;\infty\)</span>. This can be imposed by a stronger regularity condition on the moments, e.g.,
+There is a small technicality here, we must have <span class="math inline">\({\mathbb{A}}&lt;\infty\)</span>. This can be imposed by a stronger regularity condition on the moments, e.g.,
 <span class="math inline">\({\mathbb{E}\left[ Y^4 \right]},{\mathbb{E}\left[ ||{\boldsymbol{X}}||^4 \right]}&lt;\infty\)</span>.
 Putting everything together, we conclude
 <span class="math display">\[
 \sqrt{n}(\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}})\xrightarrow[d]{\quad\quad}
-\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}\mathcal{N}({\boldsymbol{0}},\mathbb{A})
-=\mathcal{N}\left(0,\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}\mathbb{A}\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}\right)
+{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}\mathcal{N}({\boldsymbol{0}},{\mathbb{A}})
+=\mathcal{N}\left(0,{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}{\mathbb{A}}{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}\right)
 \]</span></p>
 <div class="theorem">
 <p><span id="thm:asympvar" class="theorem"><strong>Theorem 7.1  (Asymptotic Distribution of OLS Estimators) </strong></span>We assume the following:<br />
@@ -189,17 +189,17 @@ Putting everything together, we conclude
 distribution of <span class="math inline">\((Y,{\boldsymbol{X}})\)</span><br />
 2. <span class="math inline">\({\mathbb{E}\left[ Y^4 \right]}&lt;\infty\)</span><br />
 3. <span class="math inline">\({\mathbb{E}\left[ ||{\boldsymbol{X}}||^4 \right]}&lt;\infty\)</span><br />
-4. <span class="math inline">\(\mathbb{Q}_{{\boldsymbol{XX}}}={\mathbb{E}\left[ {\boldsymbol{X}}{\boldsymbol{X}}&#39; \right]}\)</span> is positive-definite.
+4. <span class="math inline">\({\mathbb{Q}}_{{\boldsymbol{XX}}}={\mathbb{E}\left[ {\boldsymbol{X}}{\boldsymbol{X}}&#39; \right]}\)</span> is positive-definite.
 Under these assumptions, as <span class="math inline">\(n\to\infty\)</span>
 <span class="math display">\[
 \sqrt{n}(\widehat{{\boldsymbol{\beta}}}-{\boldsymbol{\beta}})\xrightarrow[d]{\quad\quad}
-\mathcal{N}\left({\boldsymbol{0}},\mathbb{V}_{{\boldsymbol{\beta}}}\right),
+\mathcal{N}\left({\boldsymbol{0}},{\mathbb{V}}_{{\boldsymbol{\beta}}}\right),
 \]</span>
 where
-<span class="math display">\[\mathbb{V}_{{\boldsymbol{\beta}}}\stackrel{\text{def}}{=}\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}\mathbb{A}\mathbb{Q}_{{\boldsymbol{XX}}}^{-1}\]</span>
-and <span class="math inline">\(\mathbb{Q}_{{\boldsymbol{XX}}}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}} \right]}\)</span>, <span class="math inline">\(\mathbb{A}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}}\varepsilon^2 \right]}\)</span>.</p>
+<span class="math display">\[{\mathbb{V}}_{{\boldsymbol{\beta}}}\stackrel{\text{def}}{=}{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}{\mathbb{A}}{\mathbb{Q}}_{{\boldsymbol{XX}}}^{-1}\]</span>
+and <span class="math inline">\({\mathbb{Q}}_{{\boldsymbol{XX}}}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}} \right]}\)</span>, <span class="math inline">\({\mathbb{A}}={\mathbb{E}\left[ {\boldsymbol{X}}^T{\boldsymbol{X}}\varepsilon^2 \right]}\)</span>.</p>
 </div>
-<p>The covariance matrix <span class="math inline">\(\mathbb{V}_{{\boldsymbol{\beta}}}\)</span> is called the <strong>asymptotic variance matrix</strong> of <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span>. The matrix is sometimes referred to as the <strong>sandwich</strong> form.</p>
+<p>The covariance matrix <span class="math inline">\({\mathbb{V}}_{{\boldsymbol{\beta}}}\)</span> is called the <strong>asymptotic variance matrix</strong> of <span class="math inline">\(\widehat{{\boldsymbol{\beta}}}\)</span>. The matrix is sometimes referred to as the <strong>sandwich</strong> form.</p>
 </div>
             </section>
 
