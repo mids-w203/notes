@@ -233,3 +233,43 @@ As a consequence of \@ref(thm:olserror), we can write
 $$
 \m{X}^T\v{e}=\v{0}.
 $$
+
+
+## An Example
+Let $X$ and $Y$ be random variables with $X\sim U(0,1)$ and $Y=10X^2+W$, 
+where $W\sim N(0,1)$ and $X\ind W$. 
+
+- Derive the CEF $E[Y|X]$.
+- How to compute the BLP?
+- Why do we care about the BLP?
+\newpage
+
+## Comparing the CEF, BLP, and Regression
+As it turns out, the BLP is $Y=-\frac{5}{3}+10X$.
+```{r}
+CEF <- function(X) {  10 * X^2 }
+BLP <- function(X) {  - 5 / 3 + 10 * X}
+```
+
+Let's plot both the CEF and BLP.
+```{r}
+plot(NA,type="n", xlab="X", ylab="Y", xlim=c(0, 1), ylim=c(-2, 10), 
+     main="Plot CEF and BLP")
+lines(c(0:100)/100, CEF(c(0:100)/100), col="black", lwd=2)
+lines(c(0:100)/100, BLP(c(0:100)/100), col="red", lwd=2)
+```
+
+## Draw a Random Sample and Plot Them All!
+```{r}
+x <- runif(50, -1, 1)
+x <- sort(x)
+w <- rnorm(50, 0, 1)
+d <- data.frame( x,  y = 10 * x^2 + w)
+
+plot(d$x, d$y, type = "p", pch = 1, 
+     main = "Scatter plot", xlab = "x", ylab = "y")
+ lines(c(-100:100)/100, CEF(c(-100:100)/100), col="black", lwd=0.5)
+ #lines(c(-100:100)/100, BLP(c(-100:100)/100), col="red", lwd=0.5, lty = 2)
+ abline(lm(y ~ x, data = d), col = "red", lwd = 2)
+ lines(x, predict(lm(y~I(x^2),data =d)), col='green', lwd=2)
+```

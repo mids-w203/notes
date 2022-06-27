@@ -1,4 +1,6 @@
-# Regression
+# Defining Random Variables
+
+
 We write a $k$-vector (of scalars) as a row
 $$
 \v{x}=
@@ -57,39 +59,4 @@ Let $\m{A}_{l\times k},\m{B}_{m\times l}$ be fixed matrices and $\v{c}$ a fixed 
 $$
 \E{\m{A}\v{X}+\v{Y}\m{B}+\v{c}}=\m{A}\E{\v{X}}+\E{\v{Y}}\m{B}+\v{c}.
 $$
-:::
-
-
-## Conditional Expectation Function
-:::{.theorem #cef name="Characterization of CEF"}
-If \ $\E{Y^2}<\infty$ and $\v{X}$ is a random vector such that $Y=m(\v{X})+e$, then the following statements are equivalent:  
-1. $m(\v{X})=\E{Y|\v{X}}$, the CEF of $Y$ given $\v{X}$   
-2. $\E{e|\v{X}}=0$
-:::
-
-## Best Linear Predictor
-Let $Y$ be a random variable and $\v{X}$ be a random vector of $k$ variables. We denote the **best linear predictor** of $Y$ given $\v{X}$ by $\mathscr{P}[Y|\v{X}]$. It's also called the **linear projection** of $Y$ on $\v{X}$. 
-
-::: {.theorem #blp name="Best Linear Predictor"}
-Under the following assumptions
-
-1. $\E{Y^2}<\infty$
-2. $\E{||\bf{X}||^2}<\infty$
-3. $\m{Q}_{\bf{XX}}\stackrel{\text{def}}{=}\E{\v{X}^T\v{X}}$ is positive-definite
-
-the best linear predictor exists uniquely, and has the form
-$$
-\mathscr{P}[Y|\v{X}]=\v{X}\v{\beta},
-$$
-where $\v{\beta}=\left(\E{\v{X}^T\v{X}}\right)^{-1}\m{E}[\v{X}^TY]$ is a column vector.
-:::
-
-In the following theorem, we show that the BLP error is *uncorrelated* to the explanatory variables.
-
-::: {.theorem  #blperror name="Best Linear Predictor Error"}
-If the BLP exists, the linear projection error $\eps=Y-\mathscr{P}[Y|\v{X}]$ follows the following properties:
-
-1. $\m{E}[\v{X}^T\eps]=\v{0}$
-2. moreover, $\m{E}[\eps]=0$ if 
-$\v{X}=\begin{bmatrix}1 & X_{[1]} & \ldots & X_{[k]} \end{bmatrix}$ contains a constant.
 :::

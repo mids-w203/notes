@@ -16,11 +16,11 @@ site: bookdown::bookdown_site
 ---
 \newcommand{\E}[1]{{\mathbb{E}\left[ #1 \right]}}
 \newcommand{\V}[1]{{\mathbb{V}\left[ #1 \right]}}
-\newcommand{\C}[1]{{\text{Cov}\left[ #1 \right]}}
-\newcommand{\v}[1]{{\boldsymbol{#1}}}
+\renewcommand{\C}[1]{{\text{Cov}\left[ #1 \right]}}
+\renewcommand{\v}[1]{{\boldsymbol{#1}}}
 \newcommand{\m}[1]{{\mathbb{#1}}}
 \newcommand{\p}[1]{{\mathbb{P}\left(#1\right)}}
-\newcommand{\eps}[]{\varepsilon}
+\newcommand{\eps}{\varepsilon}
 
 
 # Cover {-}
